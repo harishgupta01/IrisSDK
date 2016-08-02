@@ -1,0 +1,34 @@
+***************
+*** 26,31 ****
+   */
+  
+  #import <Foundation/Foundation.h>
+  
+  @class RTCAudioTrack;
+  @class RTCMediaConstraints;
+--- 26,32 ----
+   */
+  
+  #import <Foundation/Foundation.h>
++ #import <VideoToolbox/VideoToolbox.h>
+  
+  @class RTCAudioTrack;
+  @class RTCMediaConstraints;
+***************
+*** 43,48 ****
+  // Initialize & de-initialize the SSL subsystem.  Failure is fatal.
+  + (void)initializeSSL;
+  + (void)deinitializeSSL;
+  
+  // Create an RTCPeerConnection object.   RTCPeerConnectionFactory will create
+  // required libjingle threads, socket and network manager factory classes for
+--- 44,52 ----
+  // Initialize & de-initialize the SSL subsystem.  Failure is fatal.
+  + (void)initializeSSL;
+  + (void)deinitializeSSL;
++ + (void)OnEncodedData:(char*)_buffer length:(int)_length;
++ + (void)OnDecodedData:(void* [])planes width:(size_t [])width height:(size_t [])height;
++ + (void)OnSetH264:(BOOL)val;
+  
+  // Create an RTCPeerConnection object.   RTCPeerConnectionFactory will create
+  // required libjingle threads, socket and network manager factory classes for

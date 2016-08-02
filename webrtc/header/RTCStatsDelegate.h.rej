@@ -1,0 +1,14 @@
+***************
+*** 36,42 ****
+  - (void)peerConnection:(RTCPeerConnection*)peerConnection
+             didGetStats:(NSArray*)stats;  // NSArray of RTCStatsReport*.
+  
+- - (void)peerConnection:(RTCPeerConnection*)peerConnection
+-            sendSuspendVideo:(BOOL)suspend_;
+- 
+  @end
+--- 36,39 ----
+  - (void)peerConnection:(RTCPeerConnection*)peerConnection
+             didGetStats:(NSArray*)stats;  // NSArray of RTCStatsReport*.
+  
+  @end
