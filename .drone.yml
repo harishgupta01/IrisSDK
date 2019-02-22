@@ -7,12 +7,4 @@ pipeline:
     command_timeout: 300
 
 
-  steps:
-  - name: clone
-  image: docker:git
-  commands:
-  - cd harish
-  - git clone https://github.com/harishgupta01/IrisSDK.git
-  - git checkout $DRONE_COMMIT
-
-    
+ 
