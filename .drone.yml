@@ -7,4 +7,5 @@ pipeline:
     command_timeout: 300
 
 
- 
+ clone:
+  depth: 50
