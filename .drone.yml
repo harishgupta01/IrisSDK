@@ -9,16 +9,16 @@ pipeline:
 
   steps:
   - name: clone
-  image: docker:git
-  commands:
-  - cd harish
-  - git clone https://github.com/harishgupta01/IrisSDK.git
-  - cd IrisSDK
-  - pod install
+    image: docker:git
+    commands:
+    - cd harish
+    - git clone https://github.com/harishgupta01/IrisSDK.git
+    - cd IrisSDK
+    - pod install
 
-- name: running script
-  image: docker:git
-  commands:
+  - name: running script
+    image: docker:git
+    commands:
       - export IRISAUMURL=$${IRISAUMURL}
       - export IRISIDMURL=$${IRISIDMURL} 
       - export IRISEVMURL=$${IRISEVMURL}
