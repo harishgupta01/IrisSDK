@@ -5,21 +5,14 @@ pipeline:
     envs: [ irisaumurl, irisidmurl, irisevmurl, irisntmurl, irisappkey, irisappsecret, irisenv, irisappdomain, irisinboundservice, irisinboundsecret, irisuserid, irisuserpwd, irisfromtn, iristotn, iriscalleeid ]
     port: 4222
     command_timeout: 300
-    script:
-      - export IRISAUMURL=$${IRISAUMURL}
-      - export IRISIDMURL=$${IRISIDMURL} 
-      - export IRISEVMURL=$${IRISEVMURL}
-      - export IRISNTMURL=$${IRISNTMURL}
-      - export IRISAPPKEY=$${IRISAPPKEY} 
-      - export IRISAPPSECRET=$${IRISAPPSECRET}
-      - export IRISENV=$${IRISENV} 
-      - export IRISAPPDOMAIN=$${IRISAPPDOMAIN} 
-      - export IRISINBOUNDSERVICE=$${IRISINBOUNDSERVICE} 
-      - export IRISINBOUNDSECRET=$${IRISINBOUNDSECRET}
-      - export IRISUSERID=$${IRISUSERID}
-      - export IRISUSERPWD=$${IRISUSERPWD} 
-      - export IRISFROMTN=$${IRISFROMTN} 
-      - export IRISTOTN=$${IRISTOTN} 
-      - export IRISCALLEEID=$${IRISCALLEEID} 
-      - cd sdk/iossdk
-      - ./script_ios_test.sh
+
+
+  steps:
+  - name: clone
+  image: docker:git
+  commands:
+  - cd harish
+  - git clone https://github.com/harishgupta01/IrisSDK.git
+  - git checkout $DRONE_COMMIT
+
+    
