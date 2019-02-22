@@ -4,6 +4,8 @@ pipeline:
     secrets: [ ssh_host, ssh_username, ssh_password, irisaumurl, irisidmurl, irisevmurl, irisntmurl, irisappkey, irisappsecret, irisenv, irisappdomain, irisinboundservice, irisinboundsecret, irisuserid, irisuserpwd, irisfromtn, iristotn, iriscalleeid ]
     envs: [ irisaumurl, irisidmurl, irisevmurl, irisntmurl, irisappkey, irisappsecret, irisenv, irisappdomain, irisinboundservice, irisinboundsecret, irisuserid, irisuserpwd, irisfromtn, iristotn, iriscalleeid ]
     port: 4222
+    commands:
+        - pod install
     command_timeout: 300
     script:
       - export IRISAUMURL=$${IRISAUMURL}
