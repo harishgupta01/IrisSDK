@@ -1,6 +1,38 @@
 pipeline:
   ssh:
     image: appleboy/drone-ssh
-    commands:
-        - pod install
-    
+    secrets: [ ssh_host, ssh_username, ssh_password, irisaumurl, irisidmurl, irisevmurl, irisntmurl, irisappkey, irisappsecret, irisenv, irisappdomain, irisinboundservice, irisinboundsecret, irisuserid, irisuserpwd, irisfromtn, iristotn, iriscalleeid ]
+    envs: [ irisaumurl, irisidmurl, irisevmurl, irisntmurl, irisappkey, irisappsecret, irisenv, irisappdomain, irisinboundservice, irisinboundsecret, irisuserid, irisuserpwd, irisfromtn, iristotn, iriscalleeid ]
+    port: 4222
+    command_timeout: 300
+
+
+  steps:
+  - name: clone
+  image: docker:git
+  commands:
+  - cd harish
+  - git clone https://github.com/harishgupta01/IrisSDK.git
+  - cd IrisSDK
+  - pod install
+
+- name: running script
+  image: docker:git
+  commands:
+      - export IRISAUMURL=$${IRISAUMURL}
+      - export IRISIDMURL=$${IRISIDMURL} 
+      - export IRISEVMURL=$${IRISEVMURL}
+      - export IRISNTMURL=$${IRISNTMURL}
+      - export IRISAPPKEY=$${IRISAPPKEY} 
+      - export IRISAPPSECRET=$${IRISAPPSECRET}
+      - export IRISENV=$${IRISENV} 
+      - export IRISAPPDOMAIN=$${IRISAPPDOMAIN} 
+      - export IRISINBOUNDSERVICE=$${IRISINBOUNDSERVICE} 
+      - export IRISINBOUNDSECRET=$${IRISINBOUNDSECRET}
+      - export IRISUSERID=$${IRISUSERID}
+      - export IRISUSERPWD=$${IRISUSERPWD} 
+      - export IRISFROMTN=$${IRISFROMTN} 
+      - export IRISTOTN=$${IRISTOTN} 
+      - export IRISCALLEEID=$${IRISCALLEEID} 
+      - cd sdk/iossdk
+      - ./script_ios_test.sh
