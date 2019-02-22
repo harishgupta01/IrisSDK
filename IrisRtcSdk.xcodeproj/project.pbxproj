@@ -1,0 +1,1402 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		2B4FC5251E1C4BE300269EBE /* IrisRtcSdk-Universal */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 2B4FC5281E1C4BE300269EBE /* Build configuration list for PBXAggregateTarget "IrisRtcSdk-Universal" */;
+			buildPhases = (
+				2B4FC5291E1C4BF800269EBE /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "IrisRtcSdk-Universal";
+			productName = "IrisRtcSdk-Universal";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		062D41101DCA1E31001CB592 /* WebRTC in Resources */ = {isa = PBXBuildFile; fileRef = 062D410F1DCA1E31001CB592 /* WebRTC */; };
+		064F81531EFACE280012DE0B /* IrisChatMessage+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 064F81521EFACE280012DE0B /* IrisChatMessage+Internal.h */; };
+		067E3B2F1E29CA5C00E1ED00 /* libUnirest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 067E3B2E1E29CA5C00E1ED00 /* libUnirest.a */; };
+		067E3B301E29CA7700E1ED00 /* libUnirest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 067E3B2E1E29CA5C00E1ED00 /* libUnirest.a */; };
+		1D1DBBDA7E048DA287ED8344 /* Pods_IrisRtcSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54041F1BBC4FC88757404438 /* Pods_IrisRtcSdk.framework */; };
+		230814AE1DB0A51C009D2B04 /* IrisRtcAudioSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 230814AD1DB0A51C009D2B04 /* IrisRtcAudioSession.m */; };
+		23BF7FF51DB099EC00A8F159 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 23BF7FF41DB099EB00A8F159 /* libsqlite3.tbd */; };
+		23D43F911E3946AC00B670ED /* IrisRtcRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 23D43F8F1E3946AC00B670ED /* IrisRtcRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		23D43F921E3946AC00B670ED /* IrisRtcSdkCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 23D43F901E3946AC00B670ED /* IrisRtcSdkCoreData.h */; };
+		2B1898E31E71C2AB00F4BEB8 /* IrisRtcChatSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B1898E21E71C2AB00F4BEB8 /* IrisRtcChatSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B1898E51E71C2BD00F4BEB8 /* IrisRtcChatSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1898E41E71C2BD00F4BEB8 /* IrisRtcChatSession.m */; };
+		2B24C8AD1DA6D00300D5484A /* IrisRtcSdk.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B24C8AC1DA6D00300D5484A /* IrisRtcSdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B24C8B31DA7EFEA00D5484A /* IrisRtcSdk-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2B24C8B21DA7EFEA00D5484A /* IrisRtcSdk-Prefix.pch */; };
+		2B24C8B61DA7FDA500D5484A /* IrisRtcSdkStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B24C8B51DA7FDA500D5484A /* IrisRtcSdkStats.m */; };
+		2B4019601FFFDF2C009B389B /* XMPPJID+Iris.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B4017C51FFFDF2A009B389B /* XMPPJID+Iris.h */; };
+		2B4019611FFFDF2C009B389B /* XMPPRoom+Iris.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B4017C61FFFDF2A009B389B /* XMPPRoom+Iris.h */; };
+		2B4019621FFFDF2C009B389B /* XMPPRayo.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B4017C81FFFDF2A009B389B /* XMPPRayo.h */; };
+		2B4019631FFFDF2C009B389B /* XMPPRayo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4017C91FFFDF2A009B389B /* XMPPRayo.m */; };
+		2B4019641FFFDF2C009B389B /* IrisXMPPCapabilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4017CA1FFFDF2A009B389B /* IrisXMPPCapabilities.m */; };
+		2B4019651FFFDF2C009B389B /* XMPPWorker.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B4017CB1FFFDF2A009B389B /* XMPPWorker.h */; };
+		2B4019661FFFDF2C009B389B /* IrisXMPPAnonymousAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4017CC1FFFDF2A009B389B /* IrisXMPPAnonymousAuthentication.m */; };
+		2B4019671FFFDF2C009B389B /* XMPPWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4017CD1FFFDF2A009B389B /* XMPPWorker.m */; };
+		2B4019681FFFDF2C009B389B /* IrisXMPPRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4017CE1FFFDF2A009B389B /* IrisXMPPRoom.m */; };
+		2B40196A1FFFDF2C009B389B /* XMPPJID+Iris.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4017D01FFFDF2A009B389B /* XMPPJID+Iris.m */; };
+		2B40196B1FFFDF2C009B389B /* XMPPMessage+Iris.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4017D11FFFDF2B009B389B /* XMPPMessage+Iris.m */; };
+		2B40196C1FFFDF2C009B389B /* JAHConvertSDP.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B4017D31FFFDF2B009B389B /* JAHConvertSDP.h */; };
+		2B40196D1FFFDF2C009B389B /* JAHConvertSDP.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4017D41FFFDF2B009B389B /* JAHConvertSDP.m */; };
+		2B40196E1FFFDF2C009B389B /* XMPPJingle.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B4017D51FFFDF2B009B389B /* XMPPJingle.h */; };
+		2B40196F1FFFDF2C009B389B /* XMPPJingle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4017D61FFFDF2B009B389B /* XMPPJingle.m */; };
+		2B4019701FFFDF2C009B389B /* XMPPJingleSDP.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B4017D71FFFDF2B009B389B /* XMPPJingleSDP.h */; };
+		2B4019711FFFDF2C009B389B /* XMPPJingleSDP.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4017D81FFFDF2B009B389B /* XMPPJingleSDP.m */; };
+		2B4019721FFFDF2C009B389B /* XMPPMessage+Signaling.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B4017D91FFFDF2B009B389B /* XMPPMessage+Signaling.h */; };
+		2B4019731FFFDF2C009B389B /* XMPPMessage+Signaling.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4017DA1FFFDF2B009B389B /* XMPPMessage+Signaling.m */; };
+		2B4019741FFFDF2C009B389B /* XMPPMessage+Iris.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B4017DB1FFFDF2B009B389B /* XMPPMessage+Iris.h */; };
+		2B4019751FFFDF2C009B389B /* XMPPRoom+Iris.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4017DC1FFFDF2B009B389B /* XMPPRoom+Iris.m */; };
+		2B4019761FFFDF2C009B389B /* IrisXMPPRoom.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B4017DD1FFFDF2B009B389B /* IrisXMPPRoom.h */; };
+		2B4019781FFFDF2C009B389B /* IrisXMPPStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4017DF1FFFDF2B009B389B /* IrisXMPPStream.m */; };
+		2B4019791FFFDF2C009B389B /* XMPPPresence+Iris.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4017E01FFFDF2B009B389B /* XMPPPresence+Iris.m */; };
+		2B40197A1FFFDF2C009B389B /* XMPPPresence+Iris.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B4017E11FFFDF2B009B389B /* XMPPPresence+Iris.h */; };
+		2B40197B1FFFDF2C009B389B /* NSString+XMPPPresence_Iris.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B4017E21FFFDF2B009B389B /* NSString+XMPPPresence_Iris.h */; };
+		2B40197C1FFFDF2C009B389B /* NSString+XMPPPresence_Iris.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4017E31FFFDF2B009B389B /* NSString+XMPPPresence_Iris.m */; };
+		2B401AA81FFFDF2D009B389B /* IrisXMPPStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B40195D1FFFDF2C009B389B /* IrisXMPPStream.h */; };
+		2B401AA91FFFDF2D009B389B /* IrisXMPPAnonymousAuthentication.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B40195E1FFFDF2C009B389B /* IrisXMPPAnonymousAuthentication.h */; };
+		2B401AAA1FFFDF2D009B389B /* IrisXMPPCapabilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B40195F1FFFDF2C009B389B /* IrisXMPPCapabilities.h */; };
+		2B401AB21FFFDF6B009B389B /* IrisRtcSession+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B401AAE1FFFDF6B009B389B /* IrisRtcSession+Internal.h */; };
+		2B401AC820001AB3009B389B /* IrisLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B401AC720001838009B389B /* IrisLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B56B7EC21399F51009E7D41 /* NSMutableArray+QueueStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B56B7EB21399E3B009E7D41 /* NSMutableArray+QueueStack.h */; };
+		2B63B6A61FE1B31700BFED05 /* IrisRtcUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B63B6A51FE1B31700BFED05 /* IrisRtcUtils.m */; };
+		2B63B7021FE97A9100BFED05 /* dialtone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B63B7011FE97A9100BFED05 /* dialtone.mp3 */; };
+		2B6BF4B41E96D895005DD820 /* IrisChatMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B6BF4B31E96D27B005DD820 /* IrisChatMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B6BF4B61E97F1CD005DD820 /* IrisChatMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6BF4B51E97F1CD005DD820 /* IrisChatMessage.m */; };
+		2BBFCE981F311BBB00DF5172 /* IrisDataElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BBFCE901F311BBB00DF5172 /* IrisDataElement.h */; };
+		2BBFCE991F311BBB00DF5172 /* IrisDataElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBFCE911F311BBB00DF5172 /* IrisDataElement.m */; };
+		2BBFCE9A1F311BBB00DF5172 /* IrisJingleHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BBFCE921F311BBB00DF5172 /* IrisJingleHandler.h */; };
+		2BBFCE9B1F311BBB00DF5172 /* IrisJingleHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBFCE931F311BBB00DF5172 /* IrisJingleHandler.m */; };
+		2BBFCE9C1F311BBB00DF5172 /* IrisRootEventInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BBFCE941F311BBB00DF5172 /* IrisRootEventInfo.h */; };
+		2BBFCE9D1F311BBB00DF5172 /* IrisRootEventInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBFCE951F311BBB00DF5172 /* IrisRootEventInfo.m */; };
+		2BBFCE9E1F311BBB00DF5172 /* IrisRtcRoom.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BBFCE961F311BBB00DF5172 /* IrisRtcRoom.h */; };
+		2BBFCE9F1F311BBB00DF5172 /* IrisRtcRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBFCE971F311BBB00DF5172 /* IrisRtcRoom.m */; };
+		2BC48D951E3CF90300CC2394 /* IrisRtcRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC48D941E3CF90300CC2394 /* IrisRtcRenderer.m */; };
+		2BF1F76D1DA43C24005FA295 /* IrisRtcSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BF1F7621DA43C24005FA295 /* IrisRtcSdk.framework */; };
+		2BF1F9621DA43CC9005FA295 /* ARDSDPUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F77D1DA43CC9005FA295 /* ARDSDPUtils.h */; };
+		2BF1F9631DA43CC9005FA295 /* ARDSDPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1F77E1DA43CC9005FA295 /* ARDSDPUtils.m */; };
+		2BF1F9651DA43CC9005FA295 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F7801DA43CC9005FA295 /* Reachability.h */; };
+		2BF1F9661DA43CC9005FA295 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1F7811DA43CC9005FA295 /* Reachability.m */; };
+		2BF1F9671DA43CC9005FA295 /* SignalHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F7821DA43CC9005FA295 /* SignalHandler.h */; };
+		2BF1F9681DA43CC9005FA295 /* SignalHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1F7831DA43CC9005FA295 /* SignalHandler.mm */; };
+		2BF1F9691DA43CC9005FA295 /* WebRTCAVRecordingDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F7841DA43CC9005FA295 /* WebRTCAVRecordingDelegate.h */; };
+		2BF1F96A1DA43CC9005FA295 /* WebRTCChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F7851DA43CC9005FA295 /* WebRTCChannel.h */; };
+		2BF1F96B1DA43CC9005FA295 /* WebRTCChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1F7861DA43CC9005FA295 /* WebRTCChannel.m */; };
+		2BF1F96C1DA43CC9005FA295 /* WebRTCConsoleLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F7871DA43CC9005FA295 /* WebRTCConsoleLogger.h */; };
+		2BF1F96D1DA43CC9005FA295 /* WebRTCConsoleLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1F7881DA43CC9005FA295 /* WebRTCConsoleLogger.m */; };
+		2BF1F96E1DA43CC9005FA295 /* WebRTCError.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F7891DA43CC9005FA295 /* WebRTCError.h */; };
+		2BF1F96F1DA43CC9005FA295 /* WebRTCEventManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F78A1DA43CC9005FA295 /* WebRTCEventManager.h */; };
+		2BF1F9701DA43CC9005FA295 /* WebRTCEventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1F78B1DA43CC9005FA295 /* WebRTCEventManager.m */; };
+		2BF1F9711DA43CC9005FA295 /* WebRTCFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F78C1DA43CC9005FA295 /* WebRTCFactory.h */; };
+		2BF1F9721DA43CC9005FA295 /* WebRTCFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1F78D1DA43CC9005FA295 /* WebRTCFactory.m */; };
+		2BF1F9731DA43CC9005FA295 /* WebRTCHTTP.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F78E1DA43CC9005FA295 /* WebRTCHTTP.h */; };
+		2BF1F9741DA43CC9005FA295 /* WebRTCHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1F78F1DA43CC9005FA295 /* WebRTCHTTP.m */; };
+		2BF1F9751DA43CC9005FA295 /* WebRTCJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F7901DA43CC9005FA295 /* WebRTCJSON.h */; };
+		2BF1F9761DA43CC9005FA295 /* WebRTCJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1F7911DA43CC9005FA295 /* WebRTCJson.m */; };
+		2BF1F9771DA43CC9005FA295 /* WebRTCLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F7921DA43CC9005FA295 /* WebRTCLogging.h */; };
+		2BF1F9781DA43CC9005FA295 /* WebRTCLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1F7931DA43CC9005FA295 /* WebRTCLogging.m */; };
+		2BF1F9791DA43CC9005FA295 /* WebRTCLogHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F7941DA43CC9005FA295 /* WebRTCLogHandler.h */; };
+		2BF1F97A1DA43CC9005FA295 /* WebRTCLogHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1F7951DA43CC9005FA295 /* WebRTCLogHandler.m */; };
+		2BF1F97B1DA43CC9005FA295 /* WebRTCSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F7961DA43CC9005FA295 /* WebRTCSession.h */; };
+		2BF1F97C1DA43CC9005FA295 /* WebRTCSession.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1F7971DA43CC9005FA295 /* WebRTCSession.mm */; };
+		2BF1F97D1DA43CC9005FA295 /* WebRTCSessionConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F7981DA43CC9005FA295 /* WebRTCSessionConfig.h */; };
+		2BF1F97E1DA43CC9005FA295 /* WebRTCSessionConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1F7991DA43CC9005FA295 /* WebRTCSessionConfig.m */; };
+		2BF1F97F1DA43CC9005FA295 /* WebRTCStack-Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F79A1DA43CC9005FA295 /* WebRTCStack-Internal.h */; };
+		2BF1F9801DA43CC9005FA295 /* WebRTCStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F79B1DA43CC9005FA295 /* WebRTCStack.h */; };
+		2BF1F9811DA43CC9005FA295 /* WebRTCStack.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1F79C1DA43CC9005FA295 /* WebRTCStack.mm */; };
+		2BF1F9821DA43CC9005FA295 /* WebRTCStackConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F79D1DA43CC9005FA295 /* WebRTCStackConfig.h */; };
+		2BF1F9831DA43CC9005FA295 /* WebRTCStackConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1F79E1DA43CC9005FA295 /* WebRTCStackConfig.m */; };
+		2BF1F9841DA43CC9005FA295 /* WebRTCStatGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F79F1DA43CC9005FA295 /* WebRTCStatGroup.h */; };
+		2BF1F9851DA43CC9005FA295 /* WebRTCStatGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1F7A01DA43CC9005FA295 /* WebRTCStatGroup.m */; };
+		2BF1F9861DA43CC9005FA295 /* WebRTCStatReport.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F7A11DA43CC9005FA295 /* WebRTCStatReport.h */; };
+		2BF1F9871DA43CC9005FA295 /* WebRTCStatReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1F7A21DA43CC9005FA295 /* WebRTCStatReport.m */; };
+		2BF1F9881DA43CC9005FA295 /* WebRTCStatsCollector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F7A31DA43CC9005FA295 /* WebRTCStatsCollector.h */; };
+		2BF1F9891DA43CC9005FA295 /* WebRTCStatsCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1F7A41DA43CC9005FA295 /* WebRTCStatsCollector.m */; };
+		2BF1F98A1DA43CC9005FA295 /* WebRTCStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F7A51DA43CC9005FA295 /* WebRTCStream.h */; };
+		2BF1F98B1DA43CC9005FA295 /* WebRTCStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1F7A61DA43CC9005FA295 /* WebRTCStream.m */; };
+		2BF1F98C1DA43CC9005FA295 /* WebRTCStreamConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F7A71DA43CC9005FA295 /* WebRTCStreamConfig.h */; };
+		2BF1F98D1DA43CC9005FA295 /* WebRTCStreamConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1F7A81DA43CC9005FA295 /* WebRTCStreamConfig.m */; };
+		2BF1F98E1DA43CC9005FA295 /* WebRTCUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F7A91DA43CC9005FA295 /* WebRTCUtil.h */; };
+		2BF1F98F1DA43CC9005FA295 /* xfinity-webrtc-sdk-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F7AA1DA43CC9005FA295 /* xfinity-webrtc-sdk-Prefix.pch */; };
+		2BF1F9901DA43CC9005FA295 /* SocketIO.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F7AC1DA43CC9005FA295 /* SocketIO.h */; };
+		2BF1F9911DA43CC9005FA295 /* SocketIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1F7AD1DA43CC9005FA295 /* SocketIO.m */; };
+		2BF1F9921DA43CC9005FA295 /* SocketIOJSONSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F7AE1DA43CC9005FA295 /* SocketIOJSONSerialization.h */; };
+		2BF1F9931DA43CC9005FA295 /* SocketIOJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1F7AF1DA43CC9005FA295 /* SocketIOJSONSerialization.m */; };
+		2BF1F9941DA43CC9005FA295 /* SocketIOPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F7B01DA43CC9005FA295 /* SocketIOPacket.h */; };
+		2BF1F9951DA43CC9005FA295 /* SocketIOPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1F7B11DA43CC9005FA295 /* SocketIOPacket.m */; };
+		2BF1F9961DA43CC9005FA295 /* SocketIOTransport.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F7B21DA43CC9005FA295 /* SocketIOTransport.h */; };
+		2BF1F9971DA43CC9005FA295 /* SocketIOTransportWebsocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F7B31DA43CC9005FA295 /* SocketIOTransportWebsocket.h */; };
+		2BF1F9981DA43CC9005FA295 /* SocketIOTransportWebsocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1F7B41DA43CC9005FA295 /* SocketIOTransportWebsocket.m */; };
+		2BF1F9991DA43CC9005FA295 /* SocketIOTransportXHR.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F7B51DA43CC9005FA295 /* SocketIOTransportXHR.h */; };
+		2BF1F99A1DA43CC9005FA295 /* SocketIOTransportXHR.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1F7B61DA43CC9005FA295 /* SocketIOTransportXHR.m */; };
+		2BF1F99B1DA43CC9005FA295 /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1F7B91DA43CC9005FA295 /* base64.c */; };
+		2BF1F99C1DA43CC9005FA295 /* base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F7BA1DA43CC9005FA295 /* base64.h */; };
+		2BF1F99D1DA43CC9005FA295 /* NSData+SRB64Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F7BB1DA43CC9005FA295 /* NSData+SRB64Additions.h */; };
+		2BF1F99E1DA43CC9005FA295 /* NSData+SRB64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1F7BC1DA43CC9005FA295 /* NSData+SRB64Additions.m */; };
+		2BF1F99F1DA43CC9005FA295 /* SocketRocket-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F7BD1DA43CC9005FA295 /* SocketRocket-Prefix.pch */; };
+		2BF1F9A01DA43CC9005FA295 /* SRWebSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1F7BE1DA43CC9005FA295 /* SRWebSocket.h */; };
+		2BF1F9A11DA43CC9005FA295 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1F7BF1DA43CC9005FA295 /* SRWebSocket.m */; };
+		2BF1F9C01DA43CC9005FA295 /* libwebrtc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BF1F7E11DA43CC9005FA295 /* libwebrtc.a */; };
+		2BF1FB071DA43CDF005FA295 /* IrisRtcConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1FAF21DA43CDF005FA295 /* IrisRtcConnection.m */; };
+		2BF1FB081DA43CDF005FA295 /* IrisRtcDataSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1FAF31DA43CDF005FA295 /* IrisRtcDataSession.m */; };
+		2BF1FB091DA43CDF005FA295 /* IrisRtcEventManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1FAF41DA43CDF005FA295 /* IrisRtcEventManager.h */; };
+		2BF1FB0A1DA43CDF005FA295 /* IrisRtcEventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1FAF51DA43CDF005FA295 /* IrisRtcEventManager.m */; };
+		2BF1FB0F1DA43CDF005FA295 /* IrisRtcSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1FAFA1DA43CDF005FA295 /* IrisRtcSession.m */; };
+		2BF1FB121DA43CDF005FA295 /* IrisRtcStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1FAFD1DA43CDF005FA295 /* IrisRtcStream.m */; };
+		2BF1FB131DA43CDF005FA295 /* IrisRtcUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1FAFE1DA43CDF005FA295 /* IrisRtcUtils.h */; };
+		2BF1FB141DA43CDF005FA295 /* IrisRtcVideoSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1FAFF1DA43CDF005FA295 /* IrisRtcVideoSession.m */; };
+		2BF1FB151DA43CDF005FA295 /* IrisRtcAudioSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1FB011DA43CDF005FA295 /* IrisRtcAudioSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BF1FB161DA43CDF005FA295 /* IrisRtcConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1FB021DA43CDF005FA295 /* IrisRtcConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BF1FB171DA43CDF005FA295 /* IrisRtcDataSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1FB031DA43CDF005FA295 /* IrisRtcDataSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BF1FB181DA43CDF005FA295 /* IrisRtcSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1FB041DA43CDF005FA295 /* IrisRtcSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BF1FB191DA43CDF005FA295 /* IrisRtcStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1FB051DA43CDF005FA295 /* IrisRtcStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BF1FB1A1DA43CDF005FA295 /* IrisRtcVideoSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF1FB061DA43CDF005FA295 /* IrisRtcVideoSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BF1FB1C1DA43D0B005FA295 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BF1FB1B1DA43D0B005FA295 /* CFNetwork.framework */; };
+		2BF1FB1E1DA43D15005FA295 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BF1FB1D1DA43D15005FA295 /* Foundation.framework */; };
+		2BF1FB201DA43D19005FA295 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BF1FB1F1DA43D19005FA295 /* AssetsLibrary.framework */; };
+		2BF1FB221DA43D28005FA295 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BF1FB211DA43D28005FA295 /* VideoToolbox.framework */; };
+		2BF1FB241DA43D2E005FA295 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BF1FB231DA43D2E005FA295 /* AudioToolbox.framework */; };
+		2BF1FB261DA43D3C005FA295 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BF1FB251DA43D3C005FA295 /* libicucore.tbd */; };
+		2BF1FB281DA43D49005FA295 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BF1FB271DA43D49005FA295 /* libc++.tbd */; };
+		2BF1FB2A1DA43D55005FA295 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BF1FB291DA43D55005FA295 /* libresolv.tbd */; };
+		2BF1FB401DA4A91D005FA295 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BF1FB3F1DA4A91D005FA295 /* GLKit.framework */; };
+		2BF78195205C60ED00724175 /* WebRTCStatReport_new.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF78193205C60ED00724175 /* WebRTCStatReport_new.h */; };
+		2BF78196205C60ED00724175 /* WebRTCStatReport_new.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF78194205C60ED00724175 /* WebRTCStatReport_new.m */; };
+		2F53142E21469EF700A56396 /* WebRTCLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F53142D21469EF700A56396 /* WebRTCLogger.h */; };
+		2F53143021469F0100A56396 /* libwebrtc-logger-sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F53142F21469F0100A56396 /* libwebrtc-logger-sdk.a */; };
+		2FE52B2721A8087C00690199 /* IrisRtcConnectionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE52B2621A8087C00690199 /* IrisRtcConnectionTest.m */; };
+		2FE95D8221B00670000E31BB /* IrisRtcVideoCallTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE95D8121B00670000E31BB /* IrisRtcVideoCallTest.m */; };
+		682494F81F3AD0510024849C /* IrisRtcParticipant.h in Headers */ = {isa = PBXBuildFile; fileRef = 682494F61F3AD0510024849C /* IrisRtcParticipant.h */; };
+		682494F91F3AD0510024849C /* IrisRtcParticipant.m in Sources */ = {isa = PBXBuildFile; fileRef = 682494F71F3AD0510024849C /* IrisRtcParticipant.m */; };
+		6836100C201090EE00083533 /* IrisRtcConnection+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 6836100B201090ED00083533 /* IrisRtcConnection+Internal.h */; };
+		6889CD6C20D288010045BE0E /* IrisPhoneNumberUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6889CD6A20D288000045BE0E /* IrisPhoneNumberUtil.m */; };
+		6889CD6D20D288010045BE0E /* IrisPhoneNumberUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 6889CD6B20D288000045BE0E /* IrisPhoneNumberUtil.h */; };
+		689553B31EC0376000CFD7E5 /* IrisRtcJingleSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 689553B21EC0376000CFD7E5 /* IrisRtcJingleSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		689553B61EC0377A00CFD7E5 /* IrisRtcJingleSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 689553B41EC0377A00CFD7E5 /* IrisRtcJingleSession.m */; };
+		689553B71EC0377A00CFD7E5 /* IrisRtcJingleSession+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 689553B51EC0377A00CFD7E5 /* IrisRtcJingleSession+Internal.h */; };
+		68B9DAA81EF17834005DB83D /* IrisChatAck.h in Headers */ = {isa = PBXBuildFile; fileRef = 68B9DAA71EF17834005DB83D /* IrisChatAck.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		68B9DAAA1EF1789D005DB83D /* IrisChatAck.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B9DAA91EF1789D005DB83D /* IrisChatAck.m */; };
+		68CEC7BF1F7D1F3C00E39E29 /* IrisChatState.h in Headers */ = {isa = PBXBuildFile; fileRef = 68CEC7BE1F7D1F3C00E39E29 /* IrisChatState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6A55A0621934E4200DA2774 /* IrisRtcPstnCallTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A55A0521934E4200DA2774 /* IrisRtcPstnCallTest.m */; };
+		CC1092950659CF84E921645B /* Pods_IrisRtcSdkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDBE7AA3D1AED940CF951ADD /* Pods_IrisRtcSdkTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2BF1F76E1DA43C24005FA295 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2BF1F7591DA43C24005FA295 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2BF1F7611DA43C24005FA295;
+			remoteInfo = IrisRtcSdk;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		062D410F1DCA1E31001CB592 /* WebRTC */ = {isa = PBXFileReference; lastKnownFileType = folder; path = WebRTC; sourceTree = "<group>"; };
+		064F81521EFACE280012DE0B /* IrisChatMessage+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IrisChatMessage+Internal.h"; sourceTree = "<group>"; };
+		067E3B2A1E29C86B00E1ED00 /* Unirest */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Unirest; sourceTree = "<group>"; };
+		067E3B2C1E29C9B000E1ED00 /* UNIRest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UNIRest.h; path = Unirest/headers/UNIRest.h; sourceTree = "<group>"; };
+		067E3B2E1E29CA5C00E1ED00 /* libUnirest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUnirest.a; path = Unirest/libs/libUnirest.a; sourceTree = "<group>"; };
+		230814AD1DB0A51C009D2B04 /* IrisRtcAudioSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrisRtcAudioSession.m; sourceTree = "<group>"; };
+		23BF7FF41DB099EB00A8F159 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		23D43F8F1E3946AC00B670ED /* IrisRtcRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrisRtcRenderer.h; sourceTree = "<group>"; };
+		23D43F901E3946AC00B670ED /* IrisRtcSdkCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrisRtcSdkCoreData.h; sourceTree = "<group>"; };
+		2B1898E21E71C2AB00F4BEB8 /* IrisRtcChatSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrisRtcChatSession.h; sourceTree = "<group>"; };
+		2B1898E41E71C2BD00F4BEB8 /* IrisRtcChatSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrisRtcChatSession.m; sourceTree = "<group>"; };
+		2B24C8AC1DA6D00300D5484A /* IrisRtcSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrisRtcSdk.h; sourceTree = "<group>"; };
+		2B24C8B21DA7EFEA00D5484A /* IrisRtcSdk-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "IrisRtcSdk-Prefix.pch"; path = "IrisRtcSdk/IrisRtcSdk-Prefix.pch"; sourceTree = "<group>"; };
+		2B24C8B41DA7F30300D5484A /* IrisRtcSdkStats.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IrisRtcSdkStats.h; path = public/IrisRtcSdkStats.h; sourceTree = "<group>"; };
+		2B24C8B51DA7FDA500D5484A /* IrisRtcSdkStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrisRtcSdkStats.m; sourceTree = "<group>"; };
+		2B24C8B81DA8799400D5484A /* IrisRtcStream+Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IrisRtcStream+Internal.h"; sourceTree = "<group>"; };
+		2B24C8B91DA87C1000D5484A /* IrisRtcMediaTrack+Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IrisRtcMediaTrack+Internal.h"; sourceTree = "<group>"; };
+		2B4017C51FFFDF2A009B389B /* XMPPJID+Iris.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XMPPJID+Iris.h"; sourceTree = "<group>"; };
+		2B4017C61FFFDF2A009B389B /* XMPPRoom+Iris.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XMPPRoom+Iris.h"; sourceTree = "<group>"; };
+		2B4017C81FFFDF2A009B389B /* XMPPRayo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPRayo.h; sourceTree = "<group>"; };
+		2B4017C91FFFDF2A009B389B /* XMPPRayo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPRayo.m; sourceTree = "<group>"; };
+		2B4017CA1FFFDF2A009B389B /* IrisXMPPCapabilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrisXMPPCapabilities.m; sourceTree = "<group>"; };
+		2B4017CB1FFFDF2A009B389B /* XMPPWorker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPWorker.h; sourceTree = "<group>"; };
+		2B4017CC1FFFDF2A009B389B /* IrisXMPPAnonymousAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrisXMPPAnonymousAuthentication.m; sourceTree = "<group>"; };
+		2B4017CD1FFFDF2A009B389B /* XMPPWorker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPWorker.m; sourceTree = "<group>"; };
+		2B4017CE1FFFDF2A009B389B /* IrisXMPPRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrisXMPPRoom.m; sourceTree = "<group>"; };
+		2B4017D01FFFDF2A009B389B /* XMPPJID+Iris.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XMPPJID+Iris.m"; sourceTree = "<group>"; };
+		2B4017D11FFFDF2B009B389B /* XMPPMessage+Iris.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XMPPMessage+Iris.m"; sourceTree = "<group>"; };
+		2B4017D31FFFDF2B009B389B /* JAHConvertSDP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JAHConvertSDP.h; sourceTree = "<group>"; };
+		2B4017D41FFFDF2B009B389B /* JAHConvertSDP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JAHConvertSDP.m; sourceTree = "<group>"; };
+		2B4017D51FFFDF2B009B389B /* XMPPJingle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPJingle.h; sourceTree = "<group>"; };
+		2B4017D61FFFDF2B009B389B /* XMPPJingle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPJingle.m; sourceTree = "<group>"; };
+		2B4017D71FFFDF2B009B389B /* XMPPJingleSDP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPJingleSDP.h; sourceTree = "<group>"; };
+		2B4017D81FFFDF2B009B389B /* XMPPJingleSDP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPJingleSDP.m; sourceTree = "<group>"; };
+		2B4017D91FFFDF2B009B389B /* XMPPMessage+Signaling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XMPPMessage+Signaling.h"; sourceTree = "<group>"; };
+		2B4017DA1FFFDF2B009B389B /* XMPPMessage+Signaling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XMPPMessage+Signaling.m"; sourceTree = "<group>"; };
+		2B4017DB1FFFDF2B009B389B /* XMPPMessage+Iris.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XMPPMessage+Iris.h"; sourceTree = "<group>"; };
+		2B4017DC1FFFDF2B009B389B /* XMPPRoom+Iris.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XMPPRoom+Iris.m"; sourceTree = "<group>"; };
+		2B4017DD1FFFDF2B009B389B /* IrisXMPPRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrisXMPPRoom.h; sourceTree = "<group>"; };
+		2B4017DF1FFFDF2B009B389B /* IrisXMPPStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrisXMPPStream.m; sourceTree = "<group>"; };
+		2B4017E01FFFDF2B009B389B /* XMPPPresence+Iris.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XMPPPresence+Iris.m"; sourceTree = "<group>"; };
+		2B4017E11FFFDF2B009B389B /* XMPPPresence+Iris.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XMPPPresence+Iris.h"; sourceTree = "<group>"; };
+		2B4017E21FFFDF2B009B389B /* NSString+XMPPPresence_Iris.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XMPPPresence_Iris.h"; sourceTree = "<group>"; };
+		2B4017E31FFFDF2B009B389B /* NSString+XMPPPresence_Iris.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XMPPPresence_Iris.m"; sourceTree = "<group>"; };
+		2B40195D1FFFDF2C009B389B /* IrisXMPPStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrisXMPPStream.h; sourceTree = "<group>"; };
+		2B40195E1FFFDF2C009B389B /* IrisXMPPAnonymousAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrisXMPPAnonymousAuthentication.h; sourceTree = "<group>"; };
+		2B40195F1FFFDF2C009B389B /* IrisXMPPCapabilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrisXMPPCapabilities.h; sourceTree = "<group>"; };
+		2B401AAE1FFFDF6B009B389B /* IrisRtcSession+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IrisRtcSession+Internal.h"; sourceTree = "<group>"; };
+		2B401AC720001838009B389B /* IrisLogging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IrisLogging.h; sourceTree = "<group>"; };
+		2B56B7EB21399E3B009E7D41 /* NSMutableArray+QueueStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+QueueStack.h"; sourceTree = "<group>"; };
+		2B63B6A51FE1B31700BFED05 /* IrisRtcUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IrisRtcUtils.m; sourceTree = "<group>"; };
+		2B63B7011FE97A9100BFED05 /* dialtone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dialtone.mp3; sourceTree = "<group>"; };
+		2B6BF4B31E96D27B005DD820 /* IrisChatMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IrisChatMessage.h; sourceTree = "<group>"; };
+		2B6BF4B51E97F1CD005DD820 /* IrisChatMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrisChatMessage.m; sourceTree = "<group>"; };
+		2BBFCE901F311BBB00DF5172 /* IrisDataElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrisDataElement.h; sourceTree = "<group>"; };
+		2BBFCE911F311BBB00DF5172 /* IrisDataElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrisDataElement.m; sourceTree = "<group>"; };
+		2BBFCE921F311BBB00DF5172 /* IrisJingleHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrisJingleHandler.h; sourceTree = "<group>"; };
+		2BBFCE931F311BBB00DF5172 /* IrisJingleHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrisJingleHandler.m; sourceTree = "<group>"; };
+		2BBFCE941F311BBB00DF5172 /* IrisRootEventInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrisRootEventInfo.h; sourceTree = "<group>"; };
+		2BBFCE951F311BBB00DF5172 /* IrisRootEventInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrisRootEventInfo.m; sourceTree = "<group>"; };
+		2BBFCE961F311BBB00DF5172 /* IrisRtcRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrisRtcRoom.h; sourceTree = "<group>"; };
+		2BBFCE971F311BBB00DF5172 /* IrisRtcRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrisRtcRoom.m; sourceTree = "<group>"; };
+		2BC48D941E3CF90300CC2394 /* IrisRtcRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrisRtcRenderer.m; sourceTree = "<group>"; };
+		2BF1F7621DA43C24005FA295 /* IrisRtcSdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IrisRtcSdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BF1F7671DA43C24005FA295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BF1F76C1DA43C24005FA295 /* IrisRtcSdkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IrisRtcSdkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BF1F7731DA43C24005FA295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BF1F77D1DA43CC9005FA295 /* ARDSDPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARDSDPUtils.h; sourceTree = "<group>"; };
+		2BF1F77E1DA43CC9005FA295 /* ARDSDPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARDSDPUtils.m; sourceTree = "<group>"; };
+		2BF1F7801DA43CC9005FA295 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		2BF1F7811DA43CC9005FA295 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		2BF1F7821DA43CC9005FA295 /* SignalHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignalHandler.h; sourceTree = "<group>"; };
+		2BF1F7831DA43CC9005FA295 /* SignalHandler.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SignalHandler.mm; sourceTree = "<group>"; };
+		2BF1F7841DA43CC9005FA295 /* WebRTCAVRecordingDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCAVRecordingDelegate.h; sourceTree = "<group>"; };
+		2BF1F7851DA43CC9005FA295 /* WebRTCChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCChannel.h; sourceTree = "<group>"; };
+		2BF1F7861DA43CC9005FA295 /* WebRTCChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRTCChannel.m; sourceTree = "<group>"; };
+		2BF1F7871DA43CC9005FA295 /* WebRTCConsoleLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCConsoleLogger.h; sourceTree = "<group>"; };
+		2BF1F7881DA43CC9005FA295 /* WebRTCConsoleLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRTCConsoleLogger.m; sourceTree = "<group>"; };
+		2BF1F7891DA43CC9005FA295 /* WebRTCError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCError.h; sourceTree = "<group>"; };
+		2BF1F78A1DA43CC9005FA295 /* WebRTCEventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCEventManager.h; sourceTree = "<group>"; };
+		2BF1F78B1DA43CC9005FA295 /* WebRTCEventManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRTCEventManager.m; sourceTree = "<group>"; };
+		2BF1F78C1DA43CC9005FA295 /* WebRTCFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCFactory.h; sourceTree = "<group>"; };
+		2BF1F78D1DA43CC9005FA295 /* WebRTCFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRTCFactory.m; sourceTree = "<group>"; };
+		2BF1F78E1DA43CC9005FA295 /* WebRTCHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCHTTP.h; sourceTree = "<group>"; };
+		2BF1F78F1DA43CC9005FA295 /* WebRTCHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRTCHTTP.m; sourceTree = "<group>"; };
+		2BF1F7901DA43CC9005FA295 /* WebRTCJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCJSON.h; sourceTree = "<group>"; };
+		2BF1F7911DA43CC9005FA295 /* WebRTCJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRTCJson.m; sourceTree = "<group>"; };
+		2BF1F7921DA43CC9005FA295 /* WebRTCLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCLogging.h; sourceTree = "<group>"; };
+		2BF1F7931DA43CC9005FA295 /* WebRTCLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRTCLogging.m; sourceTree = "<group>"; };
+		2BF1F7941DA43CC9005FA295 /* WebRTCLogHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCLogHandler.h; sourceTree = "<group>"; };
+		2BF1F7951DA43CC9005FA295 /* WebRTCLogHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRTCLogHandler.m; sourceTree = "<group>"; };
+		2BF1F7961DA43CC9005FA295 /* WebRTCSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCSession.h; sourceTree = "<group>"; };
+		2BF1F7971DA43CC9005FA295 /* WebRTCSession.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WebRTCSession.mm; sourceTree = "<group>"; };
+		2BF1F7981DA43CC9005FA295 /* WebRTCSessionConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCSessionConfig.h; sourceTree = "<group>"; };
+		2BF1F7991DA43CC9005FA295 /* WebRTCSessionConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRTCSessionConfig.m; sourceTree = "<group>"; };
+		2BF1F79A1DA43CC9005FA295 /* WebRTCStack-Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WebRTCStack-Internal.h"; sourceTree = "<group>"; };
+		2BF1F79B1DA43CC9005FA295 /* WebRTCStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCStack.h; sourceTree = "<group>"; };
+		2BF1F79C1DA43CC9005FA295 /* WebRTCStack.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WebRTCStack.mm; sourceTree = "<group>"; };
+		2BF1F79D1DA43CC9005FA295 /* WebRTCStackConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCStackConfig.h; sourceTree = "<group>"; };
+		2BF1F79E1DA43CC9005FA295 /* WebRTCStackConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRTCStackConfig.m; sourceTree = "<group>"; };
+		2BF1F79F1DA43CC9005FA295 /* WebRTCStatGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCStatGroup.h; sourceTree = "<group>"; };
+		2BF1F7A01DA43CC9005FA295 /* WebRTCStatGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRTCStatGroup.m; sourceTree = "<group>"; };
+		2BF1F7A11DA43CC9005FA295 /* WebRTCStatReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCStatReport.h; sourceTree = "<group>"; };
+		2BF1F7A21DA43CC9005FA295 /* WebRTCStatReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRTCStatReport.m; sourceTree = "<group>"; };
+		2BF1F7A31DA43CC9005FA295 /* WebRTCStatsCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCStatsCollector.h; sourceTree = "<group>"; };
+		2BF1F7A41DA43CC9005FA295 /* WebRTCStatsCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRTCStatsCollector.m; sourceTree = "<group>"; };
+		2BF1F7A51DA43CC9005FA295 /* WebRTCStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCStream.h; sourceTree = "<group>"; };
+		2BF1F7A61DA43CC9005FA295 /* WebRTCStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRTCStream.m; sourceTree = "<group>"; };
+		2BF1F7A71DA43CC9005FA295 /* WebRTCStreamConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCStreamConfig.h; sourceTree = "<group>"; };
+		2BF1F7A81DA43CC9005FA295 /* WebRTCStreamConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRTCStreamConfig.m; sourceTree = "<group>"; };
+		2BF1F7A91DA43CC9005FA295 /* WebRTCUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCUtil.h; sourceTree = "<group>"; };
+		2BF1F7AA1DA43CC9005FA295 /* xfinity-webrtc-sdk-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "xfinity-webrtc-sdk-Prefix.pch"; sourceTree = "<group>"; };
+		2BF1F7AC1DA43CC9005FA295 /* SocketIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIO.h; sourceTree = "<group>"; };
+		2BF1F7AD1DA43CC9005FA295 /* SocketIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIO.m; sourceTree = "<group>"; };
+		2BF1F7AE1DA43CC9005FA295 /* SocketIOJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOJSONSerialization.h; sourceTree = "<group>"; };
+		2BF1F7AF1DA43CC9005FA295 /* SocketIOJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOJSONSerialization.m; sourceTree = "<group>"; };
+		2BF1F7B01DA43CC9005FA295 /* SocketIOPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOPacket.h; sourceTree = "<group>"; };
+		2BF1F7B11DA43CC9005FA295 /* SocketIOPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOPacket.m; sourceTree = "<group>"; };
+		2BF1F7B21DA43CC9005FA295 /* SocketIOTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransport.h; sourceTree = "<group>"; };
+		2BF1F7B31DA43CC9005FA295 /* SocketIOTransportWebsocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransportWebsocket.h; sourceTree = "<group>"; };
+		2BF1F7B41DA43CC9005FA295 /* SocketIOTransportWebsocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOTransportWebsocket.m; sourceTree = "<group>"; };
+		2BF1F7B51DA43CC9005FA295 /* SocketIOTransportXHR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransportXHR.h; sourceTree = "<group>"; };
+		2BF1F7B61DA43CC9005FA295 /* SocketIOTransportXHR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOTransportXHR.m; sourceTree = "<group>"; };
+		2BF1F7B91DA43CC9005FA295 /* base64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base64.c; sourceTree = "<group>"; };
+		2BF1F7BA1DA43CC9005FA295 /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
+		2BF1F7BB1DA43CC9005FA295 /* NSData+SRB64Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+SRB64Additions.h"; sourceTree = "<group>"; };
+		2BF1F7BC1DA43CC9005FA295 /* NSData+SRB64Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+SRB64Additions.m"; sourceTree = "<group>"; };
+		2BF1F7BD1DA43CC9005FA295 /* SocketRocket-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-Prefix.pch"; sourceTree = "<group>"; };
+		2BF1F7BE1DA43CC9005FA295 /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
+		2BF1F7BF1DA43CC9005FA295 /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
+		2BF1F7E11DA43CC9005FA295 /* libwebrtc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwebrtc.a; sourceTree = "<group>"; };
+		2BF1FAF21DA43CDF005FA295 /* IrisRtcConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrisRtcConnection.m; sourceTree = "<group>"; };
+		2BF1FAF31DA43CDF005FA295 /* IrisRtcDataSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrisRtcDataSession.m; sourceTree = "<group>"; };
+		2BF1FAF41DA43CDF005FA295 /* IrisRtcEventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrisRtcEventManager.h; sourceTree = "<group>"; };
+		2BF1FAF51DA43CDF005FA295 /* IrisRtcEventManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrisRtcEventManager.m; sourceTree = "<group>"; };
+		2BF1FAFA1DA43CDF005FA295 /* IrisRtcSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrisRtcSession.m; sourceTree = "<group>"; };
+		2BF1FAFD1DA43CDF005FA295 /* IrisRtcStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrisRtcStream.m; sourceTree = "<group>"; };
+		2BF1FAFE1DA43CDF005FA295 /* IrisRtcUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrisRtcUtils.h; sourceTree = "<group>"; };
+		2BF1FAFF1DA43CDF005FA295 /* IrisRtcVideoSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrisRtcVideoSession.m; sourceTree = "<group>"; };
+		2BF1FB011DA43CDF005FA295 /* IrisRtcAudioSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrisRtcAudioSession.h; sourceTree = "<group>"; };
+		2BF1FB021DA43CDF005FA295 /* IrisRtcConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrisRtcConnection.h; sourceTree = "<group>"; };
+		2BF1FB031DA43CDF005FA295 /* IrisRtcDataSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrisRtcDataSession.h; sourceTree = "<group>"; };
+		2BF1FB041DA43CDF005FA295 /* IrisRtcSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrisRtcSession.h; sourceTree = "<group>"; };
+		2BF1FB051DA43CDF005FA295 /* IrisRtcStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrisRtcStream.h; sourceTree = "<group>"; };
+		2BF1FB061DA43CDF005FA295 /* IrisRtcVideoSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrisRtcVideoSession.h; sourceTree = "<group>"; };
+		2BF1FB1B1DA43D0B005FA295 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		2BF1FB1D1DA43D15005FA295 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2BF1FB1F1DA43D19005FA295 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		2BF1FB211DA43D28005FA295 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		2BF1FB231DA43D2E005FA295 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		2BF1FB251DA43D3C005FA295 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		2BF1FB271DA43D49005FA295 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		2BF1FB291DA43D55005FA295 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		2BF1FB3F1DA4A91D005FA295 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		2BF78193205C60ED00724175 /* WebRTCStatReport_new.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCStatReport_new.h; sourceTree = "<group>"; };
+		2BF78194205C60ED00724175 /* WebRTCStatReport_new.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRTCStatReport_new.m; sourceTree = "<group>"; };
+		2F53142D21469EF700A56396 /* WebRTCLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCLogger.h; sourceTree = "<group>"; };
+		2F53142F21469F0100A56396 /* libwebrtc-logger-sdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libwebrtc-logger-sdk.a"; sourceTree = "<group>"; };
+		2FE52B2621A8087C00690199 /* IrisRtcConnectionTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IrisRtcConnectionTest.m; sourceTree = "<group>"; };
+		2FE95D8121B00670000E31BB /* IrisRtcVideoCallTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrisRtcVideoCallTest.m; sourceTree = "<group>"; };
+		54041F1BBC4FC88757404438 /* Pods_IrisRtcSdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IrisRtcSdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		682494F61F3AD0510024849C /* IrisRtcParticipant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrisRtcParticipant.h; sourceTree = "<group>"; };
+		682494F71F3AD0510024849C /* IrisRtcParticipant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrisRtcParticipant.m; sourceTree = "<group>"; };
+		6836100B201090ED00083533 /* IrisRtcConnection+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IrisRtcConnection+Internal.h"; sourceTree = "<group>"; };
+		6889CD6A20D288000045BE0E /* IrisPhoneNumberUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrisPhoneNumberUtil.m; sourceTree = "<group>"; };
+		6889CD6B20D288000045BE0E /* IrisPhoneNumberUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrisPhoneNumberUtil.h; sourceTree = "<group>"; };
+		689553B21EC0376000CFD7E5 /* IrisRtcJingleSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrisRtcJingleSession.h; sourceTree = "<group>"; };
+		689553B41EC0377A00CFD7E5 /* IrisRtcJingleSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrisRtcJingleSession.m; sourceTree = "<group>"; };
+		689553B51EC0377A00CFD7E5 /* IrisRtcJingleSession+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IrisRtcJingleSession+Internal.h"; sourceTree = "<group>"; };
+		68B9DAA71EF17834005DB83D /* IrisChatAck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrisChatAck.h; sourceTree = "<group>"; };
+		68B9DAA91EF1789D005DB83D /* IrisChatAck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrisChatAck.m; sourceTree = "<group>"; };
+		68CEC7BE1F7D1F3C00E39E29 /* IrisChatState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrisChatState.h; sourceTree = "<group>"; };
+		7B2FF9184F61F2519EF11D4D /* Pods-IrisRtcSdkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IrisRtcSdkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IrisRtcSdkTests/Pods-IrisRtcSdkTests.debug.xcconfig"; sourceTree = "<group>"; };
+		825A3C43BB491A49E1E40BCC /* Pods-IrisRtcSdkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IrisRtcSdkTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IrisRtcSdkTests/Pods-IrisRtcSdkTests.release.xcconfig"; sourceTree = "<group>"; };
+		88E181EA428DD7B2A82A9356 /* Pods-IrisRtcSdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IrisRtcSdk.release.xcconfig"; path = "Pods/Target Support Files/Pods-IrisRtcSdk/Pods-IrisRtcSdk.release.xcconfig"; sourceTree = "<group>"; };
+		A5A3777A4CACED64B265FC41 /* Pods-IrisRtcSdk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IrisRtcSdk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IrisRtcSdk/Pods-IrisRtcSdk.debug.xcconfig"; sourceTree = "<group>"; };
+		B6A55A0521934E4200DA2774 /* IrisRtcPstnCallTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IrisRtcPstnCallTest.m; sourceTree = "<group>"; };
+		BDBE7AA3D1AED940CF951ADD /* Pods_IrisRtcSdkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IrisRtcSdkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2BF1F75E1DA43C24005FA295 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				067E3B301E29CA7700E1ED00 /* libUnirest.a in Frameworks */,
+				23BF7FF51DB099EC00A8F159 /* libsqlite3.tbd in Frameworks */,
+				2BF1FB401DA4A91D005FA295 /* GLKit.framework in Frameworks */,
+				2BF1FB2A1DA43D55005FA295 /* libresolv.tbd in Frameworks */,
+				2F53143021469F0100A56396 /* libwebrtc-logger-sdk.a in Frameworks */,
+				2BF1FB281DA43D49005FA295 /* libc++.tbd in Frameworks */,
+				2BF1FB261DA43D3C005FA295 /* libicucore.tbd in Frameworks */,
+				2BF1FB241DA43D2E005FA295 /* AudioToolbox.framework in Frameworks */,
+				2BF1FB221DA43D28005FA295 /* VideoToolbox.framework in Frameworks */,
+				2BF1FB201DA43D19005FA295 /* AssetsLibrary.framework in Frameworks */,
+				2BF1FB1E1DA43D15005FA295 /* Foundation.framework in Frameworks */,
+				2BF1FB1C1DA43D0B005FA295 /* CFNetwork.framework in Frameworks */,
+				2BF1F9C01DA43CC9005FA295 /* libwebrtc.a in Frameworks */,
+				1D1DBBDA7E048DA287ED8344 /* Pods_IrisRtcSdk.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BF1F7691DA43C24005FA295 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BF1F76D1DA43C24005FA295 /* IrisRtcSdk.framework in Frameworks */,
+				067E3B2F1E29CA5C00E1ED00 /* libUnirest.a in Frameworks */,
+				CC1092950659CF84E921645B /* Pods_IrisRtcSdkTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		23BF7FF31DB099EB00A8F159 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				067E3B2E1E29CA5C00E1ED00 /* libUnirest.a */,
+				23BF7FF41DB099EB00A8F159 /* libsqlite3.tbd */,
+				54041F1BBC4FC88757404438 /* Pods_IrisRtcSdk.framework */,
+				BDBE7AA3D1AED940CF951ADD /* Pods_IrisRtcSdkTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2B4017C71FFFDF2A009B389B /* XEP-0327 */ = {
+			isa = PBXGroup;
+			children = (
+				2B4017C81FFFDF2A009B389B /* XMPPRayo.h */,
+				2B4017C91FFFDF2A009B389B /* XMPPRayo.m */,
+			);
+			path = "XEP-0327";
+			sourceTree = "<group>";
+		};
+		2B4017D21FFFDF2B009B389B /* XEP-0166 */ = {
+			isa = PBXGroup;
+			children = (
+				2B4017D31FFFDF2B009B389B /* JAHConvertSDP.h */,
+				2B4017D41FFFDF2B009B389B /* JAHConvertSDP.m */,
+				2B4017D51FFFDF2B009B389B /* XMPPJingle.h */,
+				2B4017D61FFFDF2B009B389B /* XMPPJingle.m */,
+				2B4017D71FFFDF2B009B389B /* XMPPJingleSDP.h */,
+				2B4017D81FFFDF2B009B389B /* XMPPJingleSDP.m */,
+				2B4017D91FFFDF2B009B389B /* XMPPMessage+Signaling.h */,
+				2B4017DA1FFFDF2B009B389B /* XMPPMessage+Signaling.m */,
+			);
+			path = "XEP-0166";
+			sourceTree = "<group>";
+		};
+		2BF1F7581DA43C24005FA295 = {
+			isa = PBXGroup;
+			children = (
+				2B63B7011FE97A9100BFED05 /* dialtone.mp3 */,
+				067E3B2C1E29C9B000E1ED00 /* UNIRest.h */,
+				067E3B2A1E29C86B00E1ED00 /* Unirest */,
+				2B24C8B21DA7EFEA00D5484A /* IrisRtcSdk-Prefix.pch */,
+				2BF1FB3F1DA4A91D005FA295 /* GLKit.framework */,
+				2BF1FB291DA43D55005FA295 /* libresolv.tbd */,
+				2BF1FB271DA43D49005FA295 /* libc++.tbd */,
+				2BF1FB251DA43D3C005FA295 /* libicucore.tbd */,
+				68846EED1E0A545000BC7DF9 /* loggerSdk */,
+				2BF1FB231DA43D2E005FA295 /* AudioToolbox.framework */,
+				2BF1FB211DA43D28005FA295 /* VideoToolbox.framework */,
+				2BF1FB1F1DA43D19005FA295 /* AssetsLibrary.framework */,
+				2BF1FB1D1DA43D15005FA295 /* Foundation.framework */,
+				2BF1FB1B1DA43D0B005FA295 /* CFNetwork.framework */,
+				2BF1F77C1DA43CC9005FA295 /* legacy */,
+				2BF1F7AB1DA43CC9005FA295 /* socket.IO-objc */,
+				2BF1F7C01DA43CC9005FA295 /* webrtc */,
+				2BF1F7E21DA43CC9005FA295 /* XMPP */,
+				2BF1F7641DA43C24005FA295 /* IrisRtcSdk */,
+				2BF1F7701DA43C24005FA295 /* IrisRtcSdkTests */,
+				2BF1F7631DA43C24005FA295 /* Products */,
+				23BF7FF31DB099EB00A8F159 /* Frameworks */,
+				EF28595875F0B18C515A7662 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		2BF1F7631DA43C24005FA295 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2BF1F7621DA43C24005FA295 /* IrisRtcSdk.framework */,
+				2BF1F76C1DA43C24005FA295 /* IrisRtcSdkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2BF1F7641DA43C24005FA295 /* IrisRtcSdk */ = {
+			isa = PBXGroup;
+			children = (
+				2BF1FB001DA43CDF005FA295 /* public */,
+				2B401AAE1FFFDF6B009B389B /* IrisRtcSession+Internal.h */,
+				6836100B201090ED00083533 /* IrisRtcConnection+Internal.h */,
+				2BBFCE911F311BBB00DF5172 /* IrisDataElement.m */,
+				2B24C8B41DA7F30300D5484A /* IrisRtcSdkStats.h */,
+				2BBFCE901F311BBB00DF5172 /* IrisDataElement.h */,
+				2BBFCE921F311BBB00DF5172 /* IrisJingleHandler.h */,
+				2BBFCE931F311BBB00DF5172 /* IrisJingleHandler.m */,
+				2BBFCE941F311BBB00DF5172 /* IrisRootEventInfo.h */,
+				2BBFCE951F311BBB00DF5172 /* IrisRootEventInfo.m */,
+				682494F61F3AD0510024849C /* IrisRtcParticipant.h */,
+				682494F71F3AD0510024849C /* IrisRtcParticipant.m */,
+				2BBFCE961F311BBB00DF5172 /* IrisRtcRoom.h */,
+				2BBFCE971F311BBB00DF5172 /* IrisRtcRoom.m */,
+				2BF1FAF21DA43CDF005FA295 /* IrisRtcConnection.m */,
+				2B1898E41E71C2BD00F4BEB8 /* IrisRtcChatSession.m */,
+				2BC48D941E3CF90300CC2394 /* IrisRtcRenderer.m */,
+				2BF1FAF31DA43CDF005FA295 /* IrisRtcDataSession.m */,
+				2BF1FAF41DA43CDF005FA295 /* IrisRtcEventManager.h */,
+				2BF1FAF51DA43CDF005FA295 /* IrisRtcEventManager.m */,
+				2BF1FAFA1DA43CDF005FA295 /* IrisRtcSession.m */,
+				689553B41EC0377A00CFD7E5 /* IrisRtcJingleSession.m */,
+				2BF1FAFD1DA43CDF005FA295 /* IrisRtcStream.m */,
+				2BF1FAFE1DA43CDF005FA295 /* IrisRtcUtils.h */,
+				2B63B6A51FE1B31700BFED05 /* IrisRtcUtils.m */,
+				230814AD1DB0A51C009D2B04 /* IrisRtcAudioSession.m */,
+				2BF1FAFF1DA43CDF005FA295 /* IrisRtcVideoSession.m */,
+				2BF1F7671DA43C24005FA295 /* Info.plist */,
+				2B24C8B51DA7FDA500D5484A /* IrisRtcSdkStats.m */,
+				064F81521EFACE280012DE0B /* IrisChatMessage+Internal.h */,
+				689553B51EC0377A00CFD7E5 /* IrisRtcJingleSession+Internal.h */,
+				2B24C8B81DA8799400D5484A /* IrisRtcStream+Internal.h */,
+				2B24C8B91DA87C1000D5484A /* IrisRtcMediaTrack+Internal.h */,
+				68B9DAA91EF1789D005DB83D /* IrisChatAck.m */,
+				2B6BF4B51E97F1CD005DD820 /* IrisChatMessage.m */,
+				6889CD6B20D288000045BE0E /* IrisPhoneNumberUtil.h */,
+				6889CD6A20D288000045BE0E /* IrisPhoneNumberUtil.m */,
+			);
+			path = IrisRtcSdk;
+			sourceTree = "<group>";
+		};
+		2BF1F7701DA43C24005FA295 /* IrisRtcSdkTests */ = {
+			isa = PBXGroup;
+			children = (
+				2FE95D8121B00670000E31BB /* IrisRtcVideoCallTest.m */,
+				2FE52B2621A8087C00690199 /* IrisRtcConnectionTest.m */,
+				B6A55A0521934E4200DA2774 /* IrisRtcPstnCallTest.m */,
+				2BF1F7731DA43C24005FA295 /* Info.plist */,
+			);
+			path = IrisRtcSdkTests;
+			sourceTree = "<group>";
+		};
+		2BF1F77C1DA43CC9005FA295 /* legacy */ = {
+			isa = PBXGroup;
+			children = (
+				2BF78193205C60ED00724175 /* WebRTCStatReport_new.h */,
+				2BF78194205C60ED00724175 /* WebRTCStatReport_new.m */,
+				2BF1F77D1DA43CC9005FA295 /* ARDSDPUtils.h */,
+				2BF1F77E1DA43CC9005FA295 /* ARDSDPUtils.m */,
+				2BF1F7801DA43CC9005FA295 /* Reachability.h */,
+				2BF1F7811DA43CC9005FA295 /* Reachability.m */,
+				2BF1F7821DA43CC9005FA295 /* SignalHandler.h */,
+				2BF1F7831DA43CC9005FA295 /* SignalHandler.mm */,
+				2BF1F7841DA43CC9005FA295 /* WebRTCAVRecordingDelegate.h */,
+				2BF1F7851DA43CC9005FA295 /* WebRTCChannel.h */,
+				2BF1F7861DA43CC9005FA295 /* WebRTCChannel.m */,
+				2BF1F7871DA43CC9005FA295 /* WebRTCConsoleLogger.h */,
+				2BF1F7881DA43CC9005FA295 /* WebRTCConsoleLogger.m */,
+				2BF1F7891DA43CC9005FA295 /* WebRTCError.h */,
+				2BF1F78A1DA43CC9005FA295 /* WebRTCEventManager.h */,
+				2BF1F78B1DA43CC9005FA295 /* WebRTCEventManager.m */,
+				2BF1F78C1DA43CC9005FA295 /* WebRTCFactory.h */,
+				2BF1F78D1DA43CC9005FA295 /* WebRTCFactory.m */,
+				2BF1F78E1DA43CC9005FA295 /* WebRTCHTTP.h */,
+				2BF1F78F1DA43CC9005FA295 /* WebRTCHTTP.m */,
+				2BF1F7901DA43CC9005FA295 /* WebRTCJSON.h */,
+				2BF1F7911DA43CC9005FA295 /* WebRTCJson.m */,
+				2BF1F7921DA43CC9005FA295 /* WebRTCLogging.h */,
+				2BF1F7931DA43CC9005FA295 /* WebRTCLogging.m */,
+				2BF1F7941DA43CC9005FA295 /* WebRTCLogHandler.h */,
+				2BF1F7951DA43CC9005FA295 /* WebRTCLogHandler.m */,
+				2BF1F7961DA43CC9005FA295 /* WebRTCSession.h */,
+				2BF1F7971DA43CC9005FA295 /* WebRTCSession.mm */,
+				2BF1F7981DA43CC9005FA295 /* WebRTCSessionConfig.h */,
+				2BF1F7991DA43CC9005FA295 /* WebRTCSessionConfig.m */,
+				2BF1F79A1DA43CC9005FA295 /* WebRTCStack-Internal.h */,
+				2BF1F79B1DA43CC9005FA295 /* WebRTCStack.h */,
+				2BF1F79C1DA43CC9005FA295 /* WebRTCStack.mm */,
+				2BF1F79D1DA43CC9005FA295 /* WebRTCStackConfig.h */,
+				2BF1F79E1DA43CC9005FA295 /* WebRTCStackConfig.m */,
+				2BF1F79F1DA43CC9005FA295 /* WebRTCStatGroup.h */,
+				2BF1F7A01DA43CC9005FA295 /* WebRTCStatGroup.m */,
+				2BF1F7A11DA43CC9005FA295 /* WebRTCStatReport.h */,
+				2BF1F7A21DA43CC9005FA295 /* WebRTCStatReport.m */,
+				2BF1F7A31DA43CC9005FA295 /* WebRTCStatsCollector.h */,
+				2BF1F7A41DA43CC9005FA295 /* WebRTCStatsCollector.m */,
+				2BF1F7A51DA43CC9005FA295 /* WebRTCStream.h */,
+				2BF1F7A61DA43CC9005FA295 /* WebRTCStream.m */,
+				2BF1F7A71DA43CC9005FA295 /* WebRTCStreamConfig.h */,
+				2BF1F7A81DA43CC9005FA295 /* WebRTCStreamConfig.m */,
+				2BF1F7A91DA43CC9005FA295 /* WebRTCUtil.h */,
+				2BF1F7AA1DA43CC9005FA295 /* xfinity-webrtc-sdk-Prefix.pch */,
+			);
+			path = legacy;
+			sourceTree = "<group>";
+		};
+		2BF1F7AB1DA43CC9005FA295 /* socket.IO-objc */ = {
+			isa = PBXGroup;
+			children = (
+				2BF1F7AC1DA43CC9005FA295 /* SocketIO.h */,
+				2BF1F7AD1DA43CC9005FA295 /* SocketIO.m */,
+				2BF1F7AE1DA43CC9005FA295 /* SocketIOJSONSerialization.h */,
+				2BF1F7AF1DA43CC9005FA295 /* SocketIOJSONSerialization.m */,
+				2BF1F7B01DA43CC9005FA295 /* SocketIOPacket.h */,
+				2BF1F7B11DA43CC9005FA295 /* SocketIOPacket.m */,
+				2BF1F7B21DA43CC9005FA295 /* SocketIOTransport.h */,
+				2BF1F7B31DA43CC9005FA295 /* SocketIOTransportWebsocket.h */,
+				2BF1F7B41DA43CC9005FA295 /* SocketIOTransportWebsocket.m */,
+				2BF1F7B51DA43CC9005FA295 /* SocketIOTransportXHR.h */,
+				2BF1F7B61DA43CC9005FA295 /* SocketIOTransportXHR.m */,
+				2BF1F7B71DA43CC9005FA295 /* submodules */,
+			);
+			path = "socket.IO-objc";
+			sourceTree = "<group>";
+		};
+		2BF1F7B71DA43CC9005FA295 /* submodules */ = {
+			isa = PBXGroup;
+			children = (
+				2BF1F7B81DA43CC9005FA295 /* socket-rocket */,
+			);
+			path = submodules;
+			sourceTree = "<group>";
+		};
+		2BF1F7B81DA43CC9005FA295 /* socket-rocket */ = {
+			isa = PBXGroup;
+			children = (
+				2BF1F7B91DA43CC9005FA295 /* base64.c */,
+				2BF1F7BA1DA43CC9005FA295 /* base64.h */,
+				2BF1F7BB1DA43CC9005FA295 /* NSData+SRB64Additions.h */,
+				2BF1F7BC1DA43CC9005FA295 /* NSData+SRB64Additions.m */,
+				2BF1F7BD1DA43CC9005FA295 /* SocketRocket-Prefix.pch */,
+				2BF1F7BE1DA43CC9005FA295 /* SRWebSocket.h */,
+				2BF1F7BF1DA43CC9005FA295 /* SRWebSocket.m */,
+			);
+			path = "socket-rocket";
+			sourceTree = "<group>";
+		};
+		2BF1F7C01DA43CC9005FA295 /* webrtc */ = {
+			isa = PBXGroup;
+			children = (
+				2BF1F7C11DA43CC9005FA295 /* header */,
+				2BF1F7E01DA43CC9005FA295 /* libs */,
+			);
+			path = webrtc;
+			sourceTree = "<group>";
+		};
+		2BF1F7C11DA43CC9005FA295 /* header */ = {
+			isa = PBXGroup;
+			children = (
+				062D410F1DCA1E31001CB592 /* WebRTC */,
+			);
+			path = header;
+			sourceTree = "<group>";
+		};
+		2BF1F7E01DA43CC9005FA295 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				2BF1F7E11DA43CC9005FA295 /* libwebrtc.a */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		2BF1F7E21DA43CC9005FA295 /* XMPP */ = {
+			isa = PBXGroup;
+			children = (
+				2B4017D21FFFDF2B009B389B /* XEP-0166 */,
+				2B4017C71FFFDF2A009B389B /* XEP-0327 */,
+				2B4017CC1FFFDF2A009B389B /* IrisXMPPAnonymousAuthentication.m */,
+				2B40195E1FFFDF2C009B389B /* IrisXMPPAnonymousAuthentication.h */,
+				2B40195F1FFFDF2C009B389B /* IrisXMPPCapabilities.h */,
+				2B4017CA1FFFDF2A009B389B /* IrisXMPPCapabilities.m */,
+				2B4017DD1FFFDF2B009B389B /* IrisXMPPRoom.h */,
+				2B4017CE1FFFDF2A009B389B /* IrisXMPPRoom.m */,
+				2B40195D1FFFDF2C009B389B /* IrisXMPPStream.h */,
+				2B4017DF1FFFDF2B009B389B /* IrisXMPPStream.m */,
+				2B4017E21FFFDF2B009B389B /* NSString+XMPPPresence_Iris.h */,
+				2B4017E31FFFDF2B009B389B /* NSString+XMPPPresence_Iris.m */,
+				2B4017C51FFFDF2A009B389B /* XMPPJID+Iris.h */,
+				2B4017D01FFFDF2A009B389B /* XMPPJID+Iris.m */,
+				2B4017DB1FFFDF2B009B389B /* XMPPMessage+Iris.h */,
+				2B4017D11FFFDF2B009B389B /* XMPPMessage+Iris.m */,
+				2B4017E11FFFDF2B009B389B /* XMPPPresence+Iris.h */,
+				2B4017E01FFFDF2B009B389B /* XMPPPresence+Iris.m */,
+				2B4017C61FFFDF2A009B389B /* XMPPRoom+Iris.h */,
+				2B4017DC1FFFDF2B009B389B /* XMPPRoom+Iris.m */,
+				2B4017CB1FFFDF2A009B389B /* XMPPWorker.h */,
+				2B4017CD1FFFDF2A009B389B /* XMPPWorker.m */,
+				2B56B7EB21399E3B009E7D41 /* NSMutableArray+QueueStack.h */,
+			);
+			path = XMPP;
+			sourceTree = "<group>";
+		};
+		2BF1FB001DA43CDF005FA295 /* public */ = {
+			isa = PBXGroup;
+			children = (
+				68CEC7BE1F7D1F3C00E39E29 /* IrisChatState.h */,
+				68B9DAA71EF17834005DB83D /* IrisChatAck.h */,
+				689553B21EC0376000CFD7E5 /* IrisRtcJingleSession.h */,
+				2B1898E21E71C2AB00F4BEB8 /* IrisRtcChatSession.h */,
+				23D43F8F1E3946AC00B670ED /* IrisRtcRenderer.h */,
+				23D43F901E3946AC00B670ED /* IrisRtcSdkCoreData.h */,
+				2B24C8AC1DA6D00300D5484A /* IrisRtcSdk.h */,
+				2BF1FB021DA43CDF005FA295 /* IrisRtcConnection.h */,
+				2BF1FB031DA43CDF005FA295 /* IrisRtcDataSession.h */,
+				2BF1FB011DA43CDF005FA295 /* IrisRtcAudioSession.h */,
+				2BF1FB041DA43CDF005FA295 /* IrisRtcSession.h */,
+				2BF1FB051DA43CDF005FA295 /* IrisRtcStream.h */,
+				2BF1FB061DA43CDF005FA295 /* IrisRtcVideoSession.h */,
+				2B6BF4B31E96D27B005DD820 /* IrisChatMessage.h */,
+				2B401AC720001838009B389B /* IrisLogging.h */,
+			);
+			path = public;
+			sourceTree = "<group>";
+		};
+		68846EED1E0A545000BC7DF9 /* loggerSdk */ = {
+			isa = PBXGroup;
+			children = (
+				68846EEE1E0A545000BC7DF9 /* header */,
+				68846EF01E0A545000BC7DF9 /* libs */,
+			);
+			path = loggerSdk;
+			sourceTree = "<group>";
+		};
+		68846EEE1E0A545000BC7DF9 /* header */ = {
+			isa = PBXGroup;
+			children = (
+				2F53142D21469EF700A56396 /* WebRTCLogger.h */,
+			);
+			path = header;
+			sourceTree = "<group>";
+		};
+		68846EF01E0A545000BC7DF9 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				2F53142F21469F0100A56396 /* libwebrtc-logger-sdk.a */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		EF28595875F0B18C515A7662 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A5A3777A4CACED64B265FC41 /* Pods-IrisRtcSdk.debug.xcconfig */,
+				88E181EA428DD7B2A82A9356 /* Pods-IrisRtcSdk.release.xcconfig */,
+				7B2FF9184F61F2519EF11D4D /* Pods-IrisRtcSdkTests.debug.xcconfig */,
+				825A3C43BB491A49E1E40BCC /* Pods-IrisRtcSdkTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2BF1F75F1DA43C24005FA295 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B4019621FFFDF2C009B389B /* XMPPRayo.h in Headers */,
+				2BF78195205C60ED00724175 /* WebRTCStatReport_new.h in Headers */,
+				2B24C8AD1DA6D00300D5484A /* IrisRtcSdk.h in Headers */,
+				68CEC7BF1F7D1F3C00E39E29 /* IrisChatState.h in Headers */,
+				2B1898E31E71C2AB00F4BEB8 /* IrisRtcChatSession.h in Headers */,
+				2B401AC820001AB3009B389B /* IrisLogging.h in Headers */,
+				2B6BF4B41E96D895005DD820 /* IrisChatMessage.h in Headers */,
+				2BF1FB151DA43CDF005FA295 /* IrisRtcAudioSession.h in Headers */,
+				2BF1FB1A1DA43CDF005FA295 /* IrisRtcVideoSession.h in Headers */,
+				2B4019721FFFDF2C009B389B /* XMPPMessage+Signaling.h in Headers */,
+				23D43F911E3946AC00B670ED /* IrisRtcRenderer.h in Headers */,
+				2B4019701FFFDF2C009B389B /* XMPPJingleSDP.h in Headers */,
+				2BF1FB171DA43CDF005FA295 /* IrisRtcDataSession.h in Headers */,
+				2BF1FB191DA43CDF005FA295 /* IrisRtcStream.h in Headers */,
+				2BF1FB181DA43CDF005FA295 /* IrisRtcSession.h in Headers */,
+				68B9DAA81EF17834005DB83D /* IrisChatAck.h in Headers */,
+				2B40197B1FFFDF2C009B389B /* NSString+XMPPPresence_Iris.h in Headers */,
+				689553B31EC0376000CFD7E5 /* IrisRtcJingleSession.h in Headers */,
+				2BF1FB161DA43CDF005FA295 /* IrisRtcConnection.h in Headers */,
+				682494F81F3AD0510024849C /* IrisRtcParticipant.h in Headers */,
+				2BF1F98F1DA43CC9005FA295 /* xfinity-webrtc-sdk-Prefix.pch in Headers */,
+				2BBFCE9C1F311BBB00DF5172 /* IrisRootEventInfo.h in Headers */,
+				2BF1F97B1DA43CC9005FA295 /* WebRTCSession.h in Headers */,
+				2B40197A1FFFDF2C009B389B /* XMPPPresence+Iris.h in Headers */,
+				2B24C8B31DA7EFEA00D5484A /* IrisRtcSdk-Prefix.pch in Headers */,
+				2BF1F9711DA43CC9005FA295 /* WebRTCFactory.h in Headers */,
+				2BF1F9771DA43CC9005FA295 /* WebRTCLogging.h in Headers */,
+				2B56B7EC21399F51009E7D41 /* NSMutableArray+QueueStack.h in Headers */,
+				2BF1F9731DA43CC9005FA295 /* WebRTCHTTP.h in Headers */,
+				2BF1F9821DA43CC9005FA295 /* WebRTCStackConfig.h in Headers */,
+				2BF1F9801DA43CC9005FA295 /* WebRTCStack.h in Headers */,
+				2BF1F9971DA43CC9005FA295 /* SocketIOTransportWebsocket.h in Headers */,
+				2BF1F9941DA43CC9005FA295 /* SocketIOPacket.h in Headers */,
+				2BF1F9621DA43CC9005FA295 /* ARDSDPUtils.h in Headers */,
+				2BF1F9751DA43CC9005FA295 /* WebRTCJSON.h in Headers */,
+				2BF1F9691DA43CC9005FA295 /* WebRTCAVRecordingDelegate.h in Headers */,
+				2BF1F96E1DA43CC9005FA295 /* WebRTCError.h in Headers */,
+				2B4019601FFFDF2C009B389B /* XMPPJID+Iris.h in Headers */,
+				2BF1F9791DA43CC9005FA295 /* WebRTCLogHandler.h in Headers */,
+				2BF1F9881DA43CC9005FA295 /* WebRTCStatsCollector.h in Headers */,
+				2B4019761FFFDF2C009B389B /* IrisXMPPRoom.h in Headers */,
+				23D43F921E3946AC00B670ED /* IrisRtcSdkCoreData.h in Headers */,
+				2BBFCE9E1F311BBB00DF5172 /* IrisRtcRoom.h in Headers */,
+				2BF1F9841DA43CC9005FA295 /* WebRTCStatGroup.h in Headers */,
+				2BF1F97D1DA43CC9005FA295 /* WebRTCSessionConfig.h in Headers */,
+				2B4019741FFFDF2C009B389B /* XMPPMessage+Iris.h in Headers */,
+				2B4019611FFFDF2C009B389B /* XMPPRoom+Iris.h in Headers */,
+				2BF1F9A01DA43CC9005FA295 /* SRWebSocket.h in Headers */,
+				2B401AB21FFFDF6B009B389B /* IrisRtcSession+Internal.h in Headers */,
+				2B401AA91FFFDF2D009B389B /* IrisXMPPAnonymousAuthentication.h in Headers */,
+				2B401AAA1FFFDF2D009B389B /* IrisXMPPCapabilities.h in Headers */,
+				2BBFCE9A1F311BBB00DF5172 /* IrisJingleHandler.h in Headers */,
+				6889CD6D20D288010045BE0E /* IrisPhoneNumberUtil.h in Headers */,
+				2BF1F9651DA43CC9005FA295 /* Reachability.h in Headers */,
+				2B4019651FFFDF2C009B389B /* XMPPWorker.h in Headers */,
+				2B40196E1FFFDF2C009B389B /* XMPPJingle.h in Headers */,
+				2BF1F96F1DA43CC9005FA295 /* WebRTCEventManager.h in Headers */,
+				2BF1F9991DA43CC9005FA295 /* SocketIOTransportXHR.h in Headers */,
+				2F53142E21469EF700A56396 /* WebRTCLogger.h in Headers */,
+				2BF1F9901DA43CC9005FA295 /* SocketIO.h in Headers */,
+				6836100C201090EE00083533 /* IrisRtcConnection+Internal.h in Headers */,
+				2BF1F98C1DA43CC9005FA295 /* WebRTCStreamConfig.h in Headers */,
+				2BBFCE981F311BBB00DF5172 /* IrisDataElement.h in Headers */,
+				2BF1F99C1DA43CC9005FA295 /* base64.h in Headers */,
+				2BF1FB091DA43CDF005FA295 /* IrisRtcEventManager.h in Headers */,
+				064F81531EFACE280012DE0B /* IrisChatMessage+Internal.h in Headers */,
+				689553B71EC0377A00CFD7E5 /* IrisRtcJingleSession+Internal.h in Headers */,
+				2BF1F99D1DA43CC9005FA295 /* NSData+SRB64Additions.h in Headers */,
+				2BF1F96C1DA43CC9005FA295 /* WebRTCConsoleLogger.h in Headers */,
+				2BF1F9671DA43CC9005FA295 /* SignalHandler.h in Headers */,
+				2BF1F96A1DA43CC9005FA295 /* WebRTCChannel.h in Headers */,
+				2BF1F9961DA43CC9005FA295 /* SocketIOTransport.h in Headers */,
+				2BF1F97F1DA43CC9005FA295 /* WebRTCStack-Internal.h in Headers */,
+				2BF1F9921DA43CC9005FA295 /* SocketIOJSONSerialization.h in Headers */,
+				2BF1F99F1DA43CC9005FA295 /* SocketRocket-Prefix.pch in Headers */,
+				2B40196C1FFFDF2C009B389B /* JAHConvertSDP.h in Headers */,
+				2BF1F98E1DA43CC9005FA295 /* WebRTCUtil.h in Headers */,
+				2BF1F9861DA43CC9005FA295 /* WebRTCStatReport.h in Headers */,
+				2BF1FB131DA43CDF005FA295 /* IrisRtcUtils.h in Headers */,
+				2B401AA81FFFDF2D009B389B /* IrisXMPPStream.h in Headers */,
+				2BF1F98A1DA43CC9005FA295 /* WebRTCStream.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2BF1F7611DA43C24005FA295 /* IrisRtcSdk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BF1F7761DA43C24005FA295 /* Build configuration list for PBXNativeTarget "IrisRtcSdk" */;
+			buildPhases = (
+				7829ABF26E4CADD22BD503A3 /* [CP] Check Pods Manifest.lock */,
+				2BF1F75D1DA43C24005FA295 /* Sources */,
+				2BF1F75E1DA43C24005FA295 /* Frameworks */,
+				2BF1F75F1DA43C24005FA295 /* Headers */,
+				2BF1F7601DA43C24005FA295 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IrisRtcSdk;
+			productName = IrisRtcSdk;
+			productReference = 2BF1F7621DA43C24005FA295 /* IrisRtcSdk.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		2BF1F76B1DA43C24005FA295 /* IrisRtcSdkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BF1F7791DA43C24005FA295 /* Build configuration list for PBXNativeTarget "IrisRtcSdkTests" */;
+			buildPhases = (
+				8E08DCD77F05A62893F31CF2 /* [CP] Check Pods Manifest.lock */,
+				2BF1F7681DA43C24005FA295 /* Sources */,
+				2BF1F7691DA43C24005FA295 /* Frameworks */,
+				2BF1F76A1DA43C24005FA295 /* Resources */,
+				72034F1B75E64F595B7742FD /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2BF1F76F1DA43C24005FA295 /* PBXTargetDependency */,
+			);
+			name = IrisRtcSdkTests;
+			productName = IrisRtcSdkTests;
+			productReference = 2BF1F76C1DA43C24005FA295 /* IrisRtcSdkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2BF1F7591DA43C24005FA295 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Gupta, Harish (Contractor)";
+				TargetAttributes = {
+					2B4FC5251E1C4BE300269EBE = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = VP7KWHY834;
+						ProvisioningStyle = Automatic;
+					};
+					2BF1F7611DA43C24005FA295 = {
+						CreatedOnToolsVersion = 7.3;
+						ProvisioningStyle = Manual;
+					};
+					2BF1F76B1DA43C24005FA295 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 2BF1F75C1DA43C24005FA295 /* Build configuration list for PBXProject "IrisRtcSdk" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2BF1F7581DA43C24005FA295;
+			productRefGroup = 2BF1F7631DA43C24005FA295 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2BF1F7611DA43C24005FA295 /* IrisRtcSdk */,
+				2BF1F76B1DA43C24005FA295 /* IrisRtcSdkTests */,
+				2B4FC5251E1C4BE300269EBE /* IrisRtcSdk-Universal */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2BF1F7601DA43C24005FA295 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B63B7021FE97A9100BFED05 /* dialtone.mp3 in Resources */,
+				062D41101DCA1E31001CB592 /* WebRTC in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BF1F76A1DA43C24005FA295 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2B4FC5291E1C4BF800269EBE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "######################\n# Options\n######################\nCONFIGURATION=Release\nOBJROOT=\"${OBJROOT}/DependentBuilds\"\necho \"OBJROOT = ${OBJROOT}\"\necho \"BUILD_DIR = ${BUILD_DIR}\"\n\nFRAMEWORK_NAME=\"${PROJECT_NAME}\"\nCOCOASOCKET_NAME=CocoaAsyncSocket\nCOCOALUMBERJACK_NAME=CocoaLumberjack\nKISSXML_NAME=KissXML\nLIBPHONENUMBER_iOS_NAME=libPhoneNumber_iOS\nXMPPFRAMEWORK_NAME=XMPPFramework\nSIMULATOR_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator\"\n\nDEVICE_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphoneos\"\n\nUNIVERSAL_LIBRARY_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal\"\n\nFRAMEWORK=\"${UNIVERSAL_LIBRARY_DIR}/${FRAMEWORK_NAME}.framework\"\n\n\nCOCOASOCKET=\"${UNIVERSAL_LIBRARY_DIR}/CocoaAsyncSocket.framework\"\nCOCOALUMBERJACK=\"${UNIVERSAL_LIBRARY_DIR}/CocoaLumberjack.framework\"\nKISSXML=\"${UNIVERSAL_LIBRARY_DIR}/KissXML.framework\"\nLIBPHONENUMBER_iOS=\"${UNIVERSAL_LIBRARY_DIR}/libPhoneNumber_iOS.framework\"\nXMPPFRAMEWORK=\"${UNIVERSAL_LIBRARY_DIR}/XMPPFramework.framework\"\n\n\n\n######################\n# Build Frameworks\n######################\necho \"*********** Building for simulator **********\"\nxcodebuild -workspace ${PROJECT_NAME}.xcworkspace -scheme ${PROJECT_NAME} -sdk iphonesimulator -configuration ${CONFIGURATION} clean build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphonesimulator 2>&1 -UseModernBuildSystem=NO\necho \"*********** Building for simulator done **********\"\n\necho \"*********** Building for iphone **********\"\nxcodebuild -workspace ${PROJECT_NAME}.xcworkspace -scheme ${PROJECT_NAME} -sdk iphoneos -configuration ${CONFIGURATION} clean build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphoneos 2>&1 -UseModernBuildSystem=NO\n\necho \"*********** Building for iphone done**********\"\n\n######################\n# Create directory for universal\n######################\n\nrm -rf \"${UNIVERSAL_LIBRARY_DIR}\"\n\nmkdir \"${UNIVERSAL_LIBRARY_DIR}\"\n\nmkdir \"${FRAMEWORK}\"\nmkdir \"${COCOASOCKET}\"\nmkdir \"${COCOALUMBERJACK}\"\nmkdir \"${KISSXML}\"\nmkdir \"${LIBPHONENUMBER_iOS}\"\nmkdir \"${XMPPFRAMEWORK}\"\n\n\n######################\n# Copy files Framework\n######################\n\ncp -r \"${DEVICE_LIBRARY_PATH}/${FRAMEWORK_NAME}.framework/.\" \"${FRAMEWORK}\"\ncp -r \"${DEVICE_LIBRARY_PATH}/${COCOASOCKET_NAME}.framework/.\" \"${COCOASOCKET}\"\ncp -r \"${DEVICE_LIBRARY_PATH}/${COCOALUMBERJACK_NAME}.framework/.\" \"${COCOALUMBERJACK}\"\ncp -r \"${DEVICE_LIBRARY_PATH}/${KISSXML_NAME}.framework/.\" \"${KISSXML}\"\ncp -r \"${DEVICE_LIBRARY_PATH}/${LIBPHONENUMBER_iOS_NAME}.framework/.\" \"${LIBPHONENUMBER_iOS}\"\ncp -r \"${DEVICE_LIBRARY_PATH}/${XMPPFRAMEWORK_NAME}.framework/.\" \"${XMPPFRAMEWORK}\"\n\ncp -r \"${SIMULATOR_LIBRARY_PATH}/${FRAMEWORK_NAME}.framework.dSYM\" \"${UNIVERSAL_LIBRARY_DIR}/\"\ncp -r \"${SIMULATOR_LIBRARY_PATH}/${COCOASOCKET_NAME}.framework.dSYM\" \"${UNIVERSAL_LIBRARY_DIR}/\"\ncp -r \"${SIMULATOR_LIBRARY_PATH}/${COCOALUMBERJACK_NAME}.framework.dSYM\" \"${UNIVERSAL_LIBRARY_DIR}/\"\ncp -r \"${SIMULATOR_LIBRARY_PATH}/${KISSXML_NAME}.framework.dSYM\" \"${UNIVERSAL_LIBRARY_DIR}/\"\ncp -r \"${SIMULATOR_LIBRARY_PATH}/${LIBPHONENUMBER_iOS_NAME}.framework.dSYM\" \"${UNIVERSAL_LIBRARY_DIR}/\"\ncp -r \"${SIMULATOR_LIBRARY_PATH}/${XMPPFRAMEWORK_NAME}.framework.dSYM\" \"${UNIVERSAL_LIBRARY_DIR}/\"\n######################\n# Make an universal binary\n######################\n\nlipo \"${SIMULATOR_LIBRARY_PATH}/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\" \"${DEVICE_LIBRARY_PATH}/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\" -create -output \"${FRAMEWORK}/${FRAMEWORK_NAME}\" | echo\nlipo \"${SIMULATOR_LIBRARY_PATH}/${COCOASOCKET_NAME}.framework/${COCOASOCKET_NAME}\" \"${DEVICE_LIBRARY_PATH}/${COCOASOCKET_NAME}.framework/${COCOASOCKET_NAME}\" -create -output \"${COCOASOCKET}/${COCOASOCKET_NAME}\" | echo\nlipo \"${SIMULATOR_LIBRARY_PATH}/${COCOALUMBERJACK_NAME}.framework/${COCOALUMBERJACK_NAME}\" \"${DEVICE_LIBRARY_PATH}/${COCOALUMBERJACK_NAME}.framework/${COCOALUMBERJACK_NAME}\" -create -output \"${COCOALUMBERJACK}/${COCOALUMBERJACK_NAME}\" | echo\nlipo \"${SIMULATOR_LIBRARY_PATH}/${KISSXML_NAME}.framework/${KISSXML_NAME}\" \"${DEVICE_LIBRARY_PATH}/${KISSXML_NAME}.framework/${KISSXML_NAME}\" -create -output \"${KISSXML}/${KISSXML_NAME}\" | echo\nlipo \"${SIMULATOR_LIBRARY_PATH}/${LIBPHONENUMBER_iOS_NAME}.framework/${LIBPHONENUMBER_iOS_NAME}\" \"${DEVICE_LIBRARY_PATH}/${LIBPHONENUMBER_iOS_NAME}.framework/${LIBPHONENUMBER_iOS_NAME}\" -create -output \"${LIBPHONENUMBER_iOS}/${LIBPHONENUMBER_iOS_NAME}\" | echo\nlipo \"${SIMULATOR_LIBRARY_PATH}/${XMPPFRAMEWORK_NAME}.framework/${XMPPFRAMEWORK_NAME}\" \"${DEVICE_LIBRARY_PATH}/${XMPPFRAMEWORK_NAME}.framework/${XMPPFRAMEWORK_NAME}\" -create -output \"${XMPPFRAMEWORK}/${XMPPFRAMEWORK_NAME}\" | echo\n";
+		};
+		72034F1B75E64F595B7742FD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IrisRtcSdkTests/Pods-IrisRtcSdkTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Unirest/Unirest.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
+				"${BUILT_PRODUCTS_DIR}/KissXML/KissXML.framework",
+				"${BUILT_PRODUCTS_DIR}/XMPPFramework/XMPPFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/libPhoneNumber-iOS/libPhoneNumber_iOS.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Unirest.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KissXML.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XMPPFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libPhoneNumber_iOS.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IrisRtcSdkTests/Pods-IrisRtcSdkTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7829ABF26E4CADD22BD503A3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IrisRtcSdk-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E08DCD77F05A62893F31CF2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IrisRtcSdkTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2BF1F75D1DA43C24005FA295 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BF1F9781DA43CC9005FA295 /* WebRTCLogging.m in Sources */,
+				2BF1F9661DA43CC9005FA295 /* Reachability.m in Sources */,
+				2BF1F99A1DA43CC9005FA295 /* SocketIOTransportXHR.m in Sources */,
+				2BF1F97E1DA43CC9005FA295 /* WebRTCSessionConfig.m in Sources */,
+				2BF1F9A11DA43CC9005FA295 /* SRWebSocket.m in Sources */,
+				2B4019631FFFDF2C009B389B /* XMPPRayo.m in Sources */,
+				2B40196A1FFFDF2C009B389B /* XMPPJID+Iris.m in Sources */,
+				2BF1F9701DA43CC9005FA295 /* WebRTCEventManager.m in Sources */,
+				6889CD6C20D288010045BE0E /* IrisPhoneNumberUtil.m in Sources */,
+				2B4019661FFFDF2C009B389B /* IrisXMPPAnonymousAuthentication.m in Sources */,
+				2B4019711FFFDF2C009B389B /* XMPPJingleSDP.m in Sources */,
+				2BF1F9981DA43CC9005FA295 /* SocketIOTransportWebsocket.m in Sources */,
+				2BF1F9891DA43CC9005FA295 /* WebRTCStatsCollector.m in Sources */,
+				2BBFCE9D1F311BBB00DF5172 /* IrisRootEventInfo.m in Sources */,
+				2BF1F98B1DA43CC9005FA295 /* WebRTCStream.m in Sources */,
+				2BF1F9951DA43CC9005FA295 /* SocketIOPacket.m in Sources */,
+				2BF1FB141DA43CDF005FA295 /* IrisRtcVideoSession.m in Sources */,
+				2BF78196205C60ED00724175 /* WebRTCStatReport_new.m in Sources */,
+				2BF1F97C1DA43CC9005FA295 /* WebRTCSession.mm in Sources */,
+				2B4019731FFFDF2C009B389B /* XMPPMessage+Signaling.m in Sources */,
+				2BC48D951E3CF90300CC2394 /* IrisRtcRenderer.m in Sources */,
+				2B4019781FFFDF2C009B389B /* IrisXMPPStream.m in Sources */,
+				2BF1F99B1DA43CC9005FA295 /* base64.c in Sources */,
+				2BF1FB121DA43CDF005FA295 /* IrisRtcStream.m in Sources */,
+				2BF1F9931DA43CC9005FA295 /* SocketIOJSONSerialization.m in Sources */,
+				2BF1F9761DA43CC9005FA295 /* WebRTCJson.m in Sources */,
+				2BF1F96D1DA43CC9005FA295 /* WebRTCConsoleLogger.m in Sources */,
+				2BF1F9631DA43CC9005FA295 /* ARDSDPUtils.m in Sources */,
+				2BF1F97A1DA43CC9005FA295 /* WebRTCLogHandler.m in Sources */,
+				2BF1F9811DA43CC9005FA295 /* WebRTCStack.mm in Sources */,
+				2BF1F96B1DA43CC9005FA295 /* WebRTCChannel.m in Sources */,
+				2B6BF4B61E97F1CD005DD820 /* IrisChatMessage.m in Sources */,
+				2BF1F9721DA43CC9005FA295 /* WebRTCFactory.m in Sources */,
+				2BBFCE9F1F311BBB00DF5172 /* IrisRtcRoom.m in Sources */,
+				2BBFCE991F311BBB00DF5172 /* IrisDataElement.m in Sources */,
+				2BF1F9851DA43CC9005FA295 /* WebRTCStatGroup.m in Sources */,
+				2B63B6A61FE1B31700BFED05 /* IrisRtcUtils.m in Sources */,
+				2B24C8B61DA7FDA500D5484A /* IrisRtcSdkStats.m in Sources */,
+				2B4019641FFFDF2C009B389B /* IrisXMPPCapabilities.m in Sources */,
+				2BBFCE9B1F311BBB00DF5172 /* IrisJingleHandler.m in Sources */,
+				689553B61EC0377A00CFD7E5 /* IrisRtcJingleSession.m in Sources */,
+				2BF1F9741DA43CC9005FA295 /* WebRTCHTTP.m in Sources */,
+				2BF1F99E1DA43CC9005FA295 /* NSData+SRB64Additions.m in Sources */,
+				2BF1F98D1DA43CC9005FA295 /* WebRTCStreamConfig.m in Sources */,
+				2BF1F9681DA43CC9005FA295 /* SignalHandler.mm in Sources */,
+				2BF1F9911DA43CC9005FA295 /* SocketIO.m in Sources */,
+				230814AE1DB0A51C009D2B04 /* IrisRtcAudioSession.m in Sources */,
+				2B4019671FFFDF2C009B389B /* XMPPWorker.m in Sources */,
+				68B9DAAA1EF1789D005DB83D /* IrisChatAck.m in Sources */,
+				2BF1FB0F1DA43CDF005FA295 /* IrisRtcSession.m in Sources */,
+				2B4019751FFFDF2C009B389B /* XMPPRoom+Iris.m in Sources */,
+				2B40196F1FFFDF2C009B389B /* XMPPJingle.m in Sources */,
+				2B40196B1FFFDF2C009B389B /* XMPPMessage+Iris.m in Sources */,
+				2B1898E51E71C2BD00F4BEB8 /* IrisRtcChatSession.m in Sources */,
+				682494F91F3AD0510024849C /* IrisRtcParticipant.m in Sources */,
+				2B4019791FFFDF2C009B389B /* XMPPPresence+Iris.m in Sources */,
+				2B40197C1FFFDF2C009B389B /* NSString+XMPPPresence_Iris.m in Sources */,
+				2BF1F9831DA43CC9005FA295 /* WebRTCStackConfig.m in Sources */,
+				2BF1F9871DA43CC9005FA295 /* WebRTCStatReport.m in Sources */,
+				2B40196D1FFFDF2C009B389B /* JAHConvertSDP.m in Sources */,
+				2BF1FB0A1DA43CDF005FA295 /* IrisRtcEventManager.m in Sources */,
+				2BF1FB071DA43CDF005FA295 /* IrisRtcConnection.m in Sources */,
+				2B4019681FFFDF2C009B389B /* IrisXMPPRoom.m in Sources */,
+				2BF1FB081DA43CDF005FA295 /* IrisRtcDataSession.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BF1F7681DA43C24005FA295 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FE52B2721A8087C00690199 /* IrisRtcConnectionTest.m in Sources */,
+				2FE95D8221B00670000E31BB /* IrisRtcVideoCallTest.m in Sources */,
+				B6A55A0621934E4200DA2774 /* IrisRtcPstnCallTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2BF1F76F1DA43C24005FA295 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2BF1F7611DA43C24005FA295 /* IrisRtcSdk */;
+			targetProxy = 2BF1F76E1DA43C24005FA295 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2B4FC5261E1C4BE300269EBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = VP7KWHY834;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2B4FC5271E1C4BE300269EBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = VP7KWHY834;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2BF1F7741DA43C24005FA295 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 3.1.16;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"SDK_VERSION=\\@\\\"3.1.16\\\"",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-lxml2";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2BF1F7751DA43C24005FA295 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 3.1.16;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = "SDK_VERSION=\\@\\\"3.1.16\\\"";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-lxml2";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2BF1F7771DA43C24005FA295 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5A3777A4CACED64B265FC41 /* Pods-IrisRtcSdk.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 3.1.16;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"SDK_VERSION=\\@\\\"3.1.16\\\"",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
+				HEADER_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/include/libxml2",
+					"$(SOURCE_ROOT)/webrtc/header/",
+					"$(SOURCE_ROOT)/IrisRtcSdk/public",
+				);
+				INFOPLIST_FILE = IrisRtcSdk/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/webrtc/libs",
+					"$(PROJECT_DIR)/XMPP/XMPPFramework/Vendor/libidn",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/loggerSdk/libs",
+					"$(PROJECT_DIR)/Unirest/libs",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lxml2",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = comcast.IrisRtcSdk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2BF1F7781DA43C24005FA295 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88E181EA428DD7B2A82A9356 /* Pods-IrisRtcSdk.release.xcconfig */;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 3.1.16;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = "SDK_VERSION=\\@\\\"3.1.16\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
+				HEADER_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/include/libxml2",
+					"$(SOURCE_ROOT)/webrtc/header/",
+					"$(SOURCE_ROOT)/IrisRtcSdk/public",
+				);
+				INFOPLIST_FILE = IrisRtcSdk/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/webrtc/libs",
+					"$(PROJECT_DIR)/XMPP/XMPPFramework/Vendor/libidn",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/loggerSdk/libs",
+					"$(PROJECT_DIR)/Unirest/libs",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lxml2",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = comcast.IrisRtcSdk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		2BF1F77A1DA43C24005FA295 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B2FF9184F61F2519EF11D4D /* Pods-IrisRtcSdkTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				INFOPLIST_FILE = IrisRtcSdkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Unirest/libs",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = comcast.IrisRtcSdkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2BF1F77B1DA43C24005FA295 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 825A3C43BB491A49E1E40BCC /* Pods-IrisRtcSdkTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = IrisRtcSdkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Unirest/libs",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = comcast.IrisRtcSdkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2B4FC5281E1C4BE300269EBE /* Build configuration list for PBXAggregateTarget "IrisRtcSdk-Universal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B4FC5261E1C4BE300269EBE /* Debug */,
+				2B4FC5271E1C4BE300269EBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2BF1F75C1DA43C24005FA295 /* Build configuration list for PBXProject "IrisRtcSdk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BF1F7741DA43C24005FA295 /* Debug */,
+				2BF1F7751DA43C24005FA295 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2BF1F7761DA43C24005FA295 /* Build configuration list for PBXNativeTarget "IrisRtcSdk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BF1F7771DA43C24005FA295 /* Debug */,
+				2BF1F7781DA43C24005FA295 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2BF1F7791DA43C24005FA295 /* Build configuration list for PBXNativeTarget "IrisRtcSdkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BF1F77A1DA43C24005FA295 /* Debug */,
+				2BF1F77B1DA43C24005FA295 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2BF1F7591DA43C24005FA295 /* Project object */;
+}
