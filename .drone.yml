@@ -2,11 +2,10 @@ pipeline:
   ssh:
     image: appleboy/drone-ssh
     secrets: [ ssh_host, ssh_username, ssh_password, irisaumurl, irisidmurl, irisevmurl, irisntmurl, irisappkey, irisappsecret, irisenv, irisappdomain, irisinboundservice, irisinboundsecret, irisuserid, irisuserpwd, irisfromtn, iristotn, iriscalleeid ]
-    envs: [ irisaumurl, irisidmurl, irisevmurl, irisntmurl, irisappkey, irisappsecret, irisenv, irisappdomain, irisinboundservice, irisinboundsecret, irisuserid, irisuserpwd, irisfromtn, iristotn, iriscalleeid ]
     port: 4222
     commands: 
     - echo hello
     - git clone https://github.com/harishgupta01/IrisSDK
     - cd IrisSDK
     - pod install
-    
+
