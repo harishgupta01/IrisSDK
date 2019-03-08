@@ -24,5 +24,5 @@ pipeline:
       - export IRISCALLEEID=$${IRISCALLEEID}   
     - git clone https://github.com/harishgupta01/IrisSDK
     - cd IrisSDK
-    - /usr/local/bin/pod install install
+    - /usr/local/bin/pod install
     - xcodebuild test -workspace IrisRtcSdk/IrisRtcSdk.xcworkspace  -scheme IrisRtcSdk -destination 'platform=iOS Simulator,name=iPhone X,OS=11.4' IRISAUMURL=$IRISAUMURL IRISIDMURL=$IRISIDMURL IRISEVMURL=$IRISEVMURL IRISNTMURL=$IRISNTMURL IRISAPPKEY=$IRISAPPKEY IRISAPPSECRET=$IRISAPPSECRET IRISENV=$IRISENV IRISAPPDOMAIN=$IRISAPPDOMAIN IRISINBOUNDSERVICE=$IRISINBOUNDSERVICE IRISINBOUNDSECRET=$IRISINBOUNDSECRET IRISUSERID=$IRISUSERID IRISUSERPWD=$IRISUSERPWD IRISFROMTN=$IRISFROMTN IRISTOTN=$IRISTOTN IRISCALLEEID=$IRISCALLEEID -only-testing:IrisRtcSdkTests/IrisRtcConnectionTest
