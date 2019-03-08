@@ -3130,6 +3130,7 @@ NSString * const IrisRtcSessionTag = @"IrisRtcSession";
                        _statsCollector = nil;
     
     
+                        [self logEvents:@"SDK_SessionEnded" additionalinfo:nil];
                        _iceServers = nil;
                        serverURL = nil;
                        initialSDP = nil;
@@ -3142,7 +3143,6 @@ NSString * const IrisRtcSessionTag = @"IrisRtcSession";
                        _eventManager = nil;
     
     
-                    [self logEvents:@"SDK_SessionEnded" additionalinfo:nil];
                     if(stats != nil){
                     [stats stopMonitoring];
                     stats = nil;
@@ -4988,7 +4988,7 @@ didChangeBufferedAmount:(uint64_t)amount
     if([self.sessionDelegate respondsToSelector:@selector(onLogAnalytics:roomId:traceId:)])
         [self.sessionDelegate onLogAnalytics:event roomId:_roomId traceId:_traceId];
 
-     dispatch_async(dispatch_get_main_queue(), ^(void){
+     //dispatch_async(dispatch_get_main_queue(), ^(void){
     
          IRISLogInfo(@"logEvents::statsObjId = %@",stats);
 //         NSDate* date = [dateFormatter dateFromString:[dateFormatter stringFromDate:[NSDate date]]];
@@ -5054,7 +5054,7 @@ didChangeBufferedAmount:(uint64_t)amount
          if(stats)
           [stats setEventsArray:_eventsArray];
         
-    });
+   // });
    
 }
 

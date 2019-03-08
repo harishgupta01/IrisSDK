@@ -16,6 +16,31 @@ __weak  static XCTestExpectation *irisVideoSessionConnectedExpectation;
 __weak  static XCTestExpectation *irisNotificationReceivedExpectation;
 __weak  static XCTestExpectation *irisVideoSessionParticipantJoinedExpectation;
 __weak  static XCTestExpectation *irisDisconnectedExpectation;
+__weak  static XCTestExpectation *irisVideoSessionInvalidRoomIDExpectation;
+__weak  static XCTestExpectation *irisVideoSessionInvalidRoomTokenExpectation;
+__weak  static XCTestExpectation *irisVideoSessionInvalidRoomExpiryTime;
+
+typedef  NS_ENUM(NSUInteger, IrisRtcVideoCallTestState){
+    
+    //for VideoCall outgoing test with valid credentials.
+    kTestVideoOutgoing,
+    
+    //for VideoCall Incoming test With Valid Credentials.
+    kTestVideoIncoming,
+    
+    //for  VideoCall outgoing test With Invalid Room Id.
+    kTestInvalidRoomIdOutgoing,
+    
+    //for videoCall incoming test with Invalid Room Id.
+    kTestInvalidRoomIdIncoming,
+    
+    //for VideoCall incoming test with Invalid Room Token.
+    kTestInvalidRoomToken,
+    
+    //for VideoCall Incoming test with Invalid Room Expiry Time.
+    kTestInvalidRoomExpiryTime
+}kVideoTestState;
+
 
 @interface IrisRtcVideoCallTest : XCTestCase <IrisRtcConnectionDelegate,IrisRtcVideoSessionDelegate,IrisRtcSessionDelegate>
 {
@@ -189,6 +214,7 @@ __weak  static XCTestExpectation *irisDisconnectedExpectation;
         }
         else{
 //            [self requestAutoAnswer];
+            kVideoTestState = kTestVideoOutgoing;
             [self createVideoSession];
             
             // Connection and session Cleanup Excuted Only when the Testcases Completed
@@ -201,35 +227,35 @@ __weak  static XCTestExpectation *irisDisconnectedExpectation;
     }];
 }
 
--(void)createVideoSession {
-    NSLog(@"Create a video session");
+- (void)test3_VideoOutgoingInvalidRoomID{
+    NSLog(@"Check RTC connection before making a video call");
     
-    if(createVideoSession == nil){
-        createVideoSession = [[IrisRtcVideoSession alloc]init];
-        createVideoSession.isVideoBridgeEnable=true;
-        createVideoSession.preferredVideoCodecType = kCodecTypeH264;
-    }
-    NSError * err;
+    //get routing id of callee
+    routingIdCallee = [self getRoutingId:calleeId];
+    
+    //Generate room id
+    [self getRoomId];
+    isOutgoing = true;
+    
     NSError *error = nil;
+    irisConnectedExpectation = [self expectationWithDescription:@"Connected with IRIS backend"];
+    [[IrisRtcConnection sharedInstance] connectUsingServer:evmUrl irisToken:IrisToken routingId:routingIdCaller delegate:self error:&error];
     
-    NSDictionary *notification = [[NSDictionary alloc]initWithObjectsAndKeys:@"video",@"type",@"iristest.comcast.com/video",@"topic",nil];
-    NSDictionary *data = [[NSDictionary alloc]initWithObjectsAndKeys:userid,@"cid",userid,@"cname",[NSNumber numberWithBool:true],@"isVideoOnly", nil];
-    NSDictionary *notificationData = [[NSDictionary alloc]initWithObjectsAndKeys:notification,@"notification",data,@"data",nil];
-    NSData * jsonData = [NSJSONSerialization  dataWithJSONObject:notificationData options:0 error:&err];
-    NSString * NotificationData = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    
-    irisVideoSessionCreatedExpectation = [self expectationWithDescription:@"Video Session Created"];
-    [createVideoSession createWithRoomId:roomId notificationData:NotificationData stream:nil sessionConfig:sessionconfig delegate:self error:&error];
-    if (error){
-        NSLog(@"Create a video session Error: %@", error);
-        XCTFail(@"Create a video session - Failed");
-        return;
-    }
-    [self waitForExpectationsWithTimeout:60 handler:^(NSError *error) {
+    [self waitForExpectationsWithTimeout:25 handler:^(NSError *error) {
         if (error) {
-            NSLog(@"Create a video session timeout Error: %@", error);
-            NSLog(@"Create a Video Session Failed");
-            return ;
+            NSLog(@"Connection Timeout Error: %@", error);
+            NSLog(@"Check RTC connection before making video call - Failed");
+        }
+        else{
+            kVideoTestState = kTestInvalidRoomIdOutgoing;
+            [self createVideoSession];
+            
+            // Connection and session Cleanup Excuted Only when the Testcases Completed
+            if (createVideoSession!=nil){
+                [createVideoSession close];
+                createVideoSession=nil;
+            }
+            [self disconnectFromServer];
         }
     }];
 }
@@ -258,6 +284,7 @@ __weak  static XCTestExpectation *irisDisconnectedExpectation;
                     NSLog(@"invoke notifiation failed");
                 }
                 else{
+                    kVideoTestState = kTestVideoIncoming;
                     [self joinVideoSession];
                     
                     // Connection and session Cleanup Excuted Only when the Testcase Completed
@@ -272,6 +299,162 @@ __weak  static XCTestExpectation *irisDisconnectedExpectation;
     }];
 }
 
+- (void)test4_VideoIncomingInvalidRoomId{
+    NSLog(@"Check RTC connection before joining a video call");
+    
+    NSError *Error = nil;
+    
+    irisConnectedExpectation = [self expectationWithDescription:@"Connected with IRIS backend"];
+    [[IrisRtcConnection sharedInstance] connectUsingServer:evmUrl irisToken:IrisToken routingId:routingIdCaller delegate:self error:&Error];
+    
+    [self waitForExpectationsWithTimeout:60 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"Connection Timeout Error: %@", error);
+            NSLog(@"Check RTC connection before making video call - Failed");
+        }
+        else{
+            irisNotificationReceivedExpectation = [self expectationWithDescription:@"Notification Received"];
+            [self invokeIncomingNotification];
+            
+            [self waitForExpectationsWithTimeout:30 handler:^(NSError * _Nullable error) {
+                if (error) {
+                    NSLog(@"Connection Timeout Error: %@", error);
+                    NSLog(@"invoke notifiation failed");
+                }
+                else{
+                    kVideoTestState = kTestInvalidRoomIdIncoming;
+                    [self joinVideoSession];
+                    
+                    // Connection and session Cleanup Excuted Only when the Testcase Completed
+                    if (joinVideoSession!=nil){
+                        [joinVideoSession close];
+                        joinVideoSession=nil;
+                    }
+                }
+            }];
+            [self disconnectFromServer];
+        }
+    }];
+    
+}
+
+- (void)test5_VideoIncomingInvalidRoomToken{
+    NSLog(@"Check RTC connection before joining a video call");
+    
+    NSError *Error = nil;
+    
+    irisConnectedExpectation = [self expectationWithDescription:@"Connected with IRIS backend"];
+    [[IrisRtcConnection sharedInstance] connectUsingServer:evmUrl irisToken:IrisToken routingId:routingIdCaller delegate:self error:&Error];
+    
+    [self waitForExpectationsWithTimeout:60 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"Connection Timeout Error: %@", error);
+            NSLog(@"Check RTC connection before making video call - Failed");
+        }
+        else{
+            irisNotificationReceivedExpectation = [self expectationWithDescription:@"Notification Received"];
+            [self invokeIncomingNotification];
+            
+            [self waitForExpectationsWithTimeout:30 handler:^(NSError * _Nullable error) {
+                if (error) {
+                    NSLog(@"Connection Timeout Error: %@", error);
+                    NSLog(@"invoke notifiation failed");
+                }
+                else{
+                    kVideoTestState = kTestInvalidRoomToken;
+                    [self joinVideoSession];
+                    
+                    // Connection and session Cleanup Excuted Only when the Testcase Completed
+                    if (joinVideoSession!=nil){
+                        [joinVideoSession close];
+                        joinVideoSession=nil;
+                    }
+                }
+            }];
+            [self disconnectFromServer];
+        }
+    }];
+    
+}
+
+- (void)test6_VideoIncomingInvalidRoomExpireyTime{
+    NSLog(@"Check RTC connection before joining a video call");
+    
+    NSError *Error = nil;
+    
+    irisConnectedExpectation = [self expectationWithDescription:@"Connected with IRIS backend"];
+    [[IrisRtcConnection sharedInstance] connectUsingServer:evmUrl irisToken:IrisToken routingId:routingIdCaller delegate:self error:&Error];
+    
+    [self waitForExpectationsWithTimeout:60 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"Connection Timeout Error: %@", error);
+            NSLog(@"Check RTC connection before making video call - Failed");
+        }
+        else{
+            irisNotificationReceivedExpectation = [self expectationWithDescription:@"Notification Received"];
+            [self invokeIncomingNotification];
+            
+            [self waitForExpectationsWithTimeout:30 handler:^(NSError * _Nullable error) {
+                if (error) {
+                    NSLog(@"Connection Timeout Error: %@", error);
+                    NSLog(@"invoke notifiation failed");
+                }
+                else{
+                    kVideoTestState = kTestInvalidRoomExpiryTime;
+                    [self joinVideoSession];
+                    
+                    // Connection and session Cleanup Excuted Only when the Testcase Completed
+                    if (joinVideoSession!=nil){
+                        [joinVideoSession close];
+                        joinVideoSession=nil;
+                    }
+                }
+            }];
+            [self disconnectFromServer];
+        }
+    }];
+}
+
+-(void)createVideoSession {
+    NSLog(@"Create a video session");
+    
+    if(createVideoSession == nil){
+        createVideoSession = [[IrisRtcVideoSession alloc]init];
+        createVideoSession.isVideoBridgeEnable=true;
+        createVideoSession.preferredVideoCodecType = kCodecTypeH264;
+    }
+    NSError * err;
+    NSError *error = nil;
+    
+    NSDictionary *notification = [[NSDictionary alloc]initWithObjectsAndKeys:@"video",@"type",@"iristest.comcast.com/video",@"topic",nil];
+    NSDictionary *data = [[NSDictionary alloc]initWithObjectsAndKeys:userid,@"cid",userid,@"cname",[NSNumber numberWithBool:true],@"isVideoOnly", nil];
+    NSDictionary *notificationData = [[NSDictionary alloc]initWithObjectsAndKeys:notification,@"notification",data,@"data",nil];
+    NSData * jsonData = [NSJSONSerialization  dataWithJSONObject:notificationData options:0 error:&err];
+    NSString * NotificationData = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+    if (kVideoTestState == kTestVideoOutgoing) {
+        irisVideoSessionCreatedExpectation = [self expectationWithDescription:@"Video Session Created"];
+        [createVideoSession createWithRoomId:roomId notificationData:NotificationData stream:nil sessionConfig:sessionconfig delegate:self error:&error];
+    }
+    else if (kVideoTestState == kTestInvalidRoomIdOutgoing){
+        irisVideoSessionInvalidRoomIDExpectation = [self expectationWithDescription:@"Invalid RoomID"];
+        [createVideoSession createWithRoomId:@"hdvnlz" notificationData:NotificationData stream:nil sessionConfig:sessionconfig delegate:self error:&error];
+    }
+    if (error){
+        NSLog(@"Create a video session Error: %@", error);
+        XCTFail(@"Create a video session - Failed");
+        return;
+    }
+    [self waitForExpectationsWithTimeout:60 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"Create a video session timeout Error: %@", error);
+            NSLog(@"Create a Video Session Failed");
+            return ;
+        }
+    }];
+}
+
+
 -(void)joinVideoSession {
     NSLog(@"Join video session");
     
@@ -282,8 +465,22 @@ __weak  static XCTestExpectation *irisDisconnectedExpectation;
     }
     
     NSError *error = nil;
-    irisVideoSessionJoinedExpectation = [self expectationWithDescription:@"Video Session joined"];
-    [joinVideoSession joinWithSessionId:roomId roomToken:roomToken roomTokenExpiryTime:[roomTokenExpiryTime integerValue] stream:nil rtcServer:rtcServer sessionConfig:sessionconfig delegate:self error:&error];
+    if (kVideoTestState == kTestVideoIncoming) {
+        irisVideoSessionJoinedExpectation = [self expectationWithDescription:@"Video Session joined"];
+        [joinVideoSession joinWithSessionId:roomId roomToken:roomToken roomTokenExpiryTime:[roomTokenExpiryTime integerValue] stream:nil rtcServer:rtcServer sessionConfig:sessionconfig delegate:self error:&error];
+    }
+    else if (kVideoTestState == kTestInvalidRoomIdIncoming){
+        irisVideoSessionInvalidRoomIDExpectation = [self expectationWithDescription:@"Invalid RoomId"];
+        [joinVideoSession joinWithSessionId:@"hsdjvb" roomToken:roomToken roomTokenExpiryTime:[roomTokenExpiryTime integerValue] stream:nil rtcServer:rtcServer sessionConfig:sessionconfig delegate:self error:&error];
+    }
+    else if (kVideoTestState == kTestInvalidRoomToken){
+        irisVideoSessionInvalidRoomTokenExpectation = [self expectationWithDescription:@"Invalid Room Token"];
+        [joinVideoSession joinWithSessionId:roomId roomToken:@"edsjv" roomTokenExpiryTime:[roomTokenExpiryTime integerValue] stream:nil rtcServer:rtcServer sessionConfig:sessionconfig delegate:self error:&error];
+    }
+    else if (kVideoTestState == kTestInvalidRoomExpiryTime){
+        irisVideoSessionInvalidRoomExpiryTime = [self expectationWithDescription:@"InValid Room Expirey Time"];
+        [joinVideoSession joinWithSessionId:roomId roomToken:roomToken roomTokenExpiryTime:2345 stream:nil rtcServer:rtcServer sessionConfig:sessionconfig delegate:self error:&error];
+    }
     if (error)
     {
         NSLog(@"Join video session Error: %@", error);
@@ -413,9 +610,9 @@ __weak  static XCTestExpectation *irisDisconnectedExpectation;
 
 - (void)onSessionConnected:(NSString *)roomId traceId:(NSString *)traceId {
     NSLog(@"IrisRtcVideoSessionDelegate :: onSessionConnected: %@",roomId);
-    if (isOutgoing)
+    if (kVideoTestState == kTestVideoOutgoing)
         [irisVideoSessionCreatedExpectation fulfill];
-    else
+    else if(kVideoTestState == kTestVideoIncoming)
         [irisVideoSessionJoinedExpectation fulfill];
 }
 
@@ -469,6 +666,26 @@ __weak  static XCTestExpectation *irisDisconnectedExpectation;
 
 - (void)onSessionParticipantMessage:(IrisChatMessage *)message participantId:(NSString *)participantId roomId:(NSString *)roomId traceId:(NSString *)traceId{
     NSLog(@"IrisRtcVideoSessionDelegate :: onSessionParticipantMessage: %@",roomId);
+}
+
+- (void)onSessionError:(NSError *)error withAdditionalInfo:(NSDictionary *)info roomId:(NSString *)roomId traceId:(NSString *)traceId{
+    NSLog(@"IrisRtcAudioSessionDelegate :: onSessionError :%@,%ld",error.localizedDescription,(long)error.code);
+    if (kVideoTestState == kTestInvalidRoomIdOutgoing) {
+        [irisVideoSessionInvalidRoomIDExpectation fulfill];
+        irisVideoSessionInvalidRoomIDExpectation = nil;
+    }
+    else if (kVideoTestState == kTestInvalidRoomIdIncoming){
+        [irisVideoSessionInvalidRoomIDExpectation fulfill];
+        irisVideoSessionInvalidRoomIDExpectation = nil;
+    }
+    else if (kVideoTestState == kTestInvalidRoomToken){
+        [irisVideoSessionInvalidRoomTokenExpectation fulfill];
+        irisVideoSessionInvalidRoomTokenExpectation = nil;
+    }
+    else if (kVideoTestState == kTestInvalidRoomExpiryTime){
+        [irisVideoSessionInvalidRoomExpiryTime fulfill];
+        irisVideoSessionInvalidRoomExpiryTime = nil;
+    }
 }
 
 @end

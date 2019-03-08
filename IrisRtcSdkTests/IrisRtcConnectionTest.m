@@ -14,6 +14,7 @@ __weak  static XCTestExpectation *irisInvalidUrlExpectation;
 __weak  static XCTestExpectation *irisInvalidTokenExpectation;
 __weak  static XCTestExpectation *irisHitlessUpgradeExpectation;
 __weak  static XCTestExpectation *irisDisconnectedExpectation;
+__weak  static XCTestExpectation *irisInvalidRoutingIdExpectation;
 
 
 @interface IrisRtcConnectionTest : XCTestCase <IrisRtcConnectionDelegate>
@@ -124,7 +125,7 @@ __weak  static XCTestExpectation *irisDisconnectedExpectation;
     [super tearDown];
 }
 
-- (void)test3_ValidRtcConnection {
+- (void)test4_ValidRtcConnection {
     
     NSLog(@"Test for RTC connection with valid credentials");
     NSError *Error = nil;
@@ -174,6 +175,22 @@ __weak  static XCTestExpectation *irisDisconnectedExpectation;
             NSLog(@"RTC connection with invalid URL - Failed");
         }
     }];
+}
+
+- (void)test3_InvalidRoutingId{
+    NSLog(@"Test for RTC connection with invalid URL");
+    NSError *Error = nil;
+    NSString *invalidRoutingId = @"ABCD";
+    irisInvalidRoutingIdExpectation = [self expectationWithDescription:@"Error with IRIS backend"];
+    [[IrisRtcConnection sharedInstance] connectUsingServer:evmUrl irisToken:IrisToken routingId:invalidRoutingId delegate:self error:&Error];
+    
+    [self waitForExpectationsWithTimeout:30 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"Connection Timeout Error: %@", error);
+            NSLog(@"RTC connection with invalid URL - Failed");
+        }
+    }];
+    
 }
 
 //-(void)test4_HitlessUpgrade{
@@ -229,10 +246,15 @@ __weak  static XCTestExpectation *irisDisconnectedExpectation;
 
 - (void)onConnected{
     NSLog(@"IrisRtcConnectionDelegate :: onConnected");
-    if(irisHitlessUpgradeExpectation)
+    if(irisHitlessUpgradeExpectation){
         [irisHitlessUpgradeExpectation fulfill];
-    else if (irisConnectedExpectation)
+        irisHitlessUpgradeExpectation = nil;
+    }
+    else if (irisConnectedExpectation){
         [irisConnectedExpectation fulfill];
+        irisConnectedExpectation = nil;
+    }
+    
 }
 
 - (void)onDisconnected{
@@ -240,10 +262,17 @@ __weak  static XCTestExpectation *irisDisconnectedExpectation;
 }
 
 - (void)onError:(NSError *)error withAdditionalInfo:(nullable NSDictionary *)info{
-    if (error.code == -105)
+    NSLog(@"onError:%@ Code:%ld",error.localizedDescription,(long)error.code);
+    if (error.code == -105){
         [irisInvalidTokenExpectation fulfill];
-    else if (error.code == -902)
+        irisInvalidTokenExpectation = nil;
+        [irisInvalidRoutingIdExpectation fulfill];
+        irisInvalidRoutingIdExpectation = nil;
+    }
+    else if (error.code == -902){
         [irisInvalidUrlExpectation fulfill];
+        irisInvalidUrlExpectation = nil;
+    }
 }
 
 - (void)onNotification:(NSDictionary *)data{

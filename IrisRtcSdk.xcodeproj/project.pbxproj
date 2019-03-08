@@ -901,7 +901,8 @@
 					};
 					2BF1F7611DA43C24005FA295 = {
 						CreatedOnToolsVersion = 7.3;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = LPP27B939A;
+						ProvisioningStyle = Automatic;
 					};
 					2BF1F76B1DA43C24005FA295 = {
 						CreatedOnToolsVersion = 7.3;
@@ -1155,7 +1156,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 3.1.16;
+				CURRENT_PROJECT_VERSION = 3.1.17;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1168,7 +1169,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
-					"SDK_VERSION=\\@\\\"3.1.16\\\"",
+					"SDK_VERSION=\\@\\\"3.1.17\\\"",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -1207,7 +1208,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 3.1.16;
+				CURRENT_PROJECT_VERSION = 3.1.17;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1215,7 +1216,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
-				GCC_PREPROCESSOR_DEFINITIONS = "SDK_VERSION=\\@\\\"3.1.16\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS = "SDK_VERSION=\\@\\\"3.1.17\\\"";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1238,10 +1239,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A5A3777A4CACED64B265FC41 /* Pods-IrisRtcSdk.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 3.1.16;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3.1.17;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = LPP27B939A;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1277,6 +1280,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = comcast.IrisRtcSdk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -1285,16 +1289,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 88E181EA428DD7B2A82A9356 /* Pods-IrisRtcSdk.release.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 3.1.16;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3.1.17;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = LPP27B939A;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
-				GCC_PREPROCESSOR_DEFINITIONS = "SDK_VERSION=\\@\\\"3.1.16\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS = "SDK_VERSION=\\@\\\"3.1.17\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
 				HEADER_SEARCH_PATHS = (
 					"$(SDKROOT)/usr/include/libxml2",
@@ -1320,6 +1326,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = comcast.IrisRtcSdk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

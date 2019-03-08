@@ -16,6 +16,42 @@ __weak  static XCTestExpectation *irisAudioSessionCreatedExpectation;
 __weak  static XCTestExpectation *irisAudioSessionJoinExpectation;
 __weak  static XCTestExpectation *irisNotificationReceivedExpectation;
 __weak  static XCTestExpectation *irisDisconnectedExpectation;
+__weak  static XCTestExpectation *irisInvalidSourceTNExpectation;
+__weak  static XCTestExpectation *irisInvalidRoomIdExpectation;
+__weak  static XCTestExpectation *irisInvalidRoomTokenExpectation;
+__weak  static XCTestExpectation *irisInvalidRoomExpiryExpectation;
+__weak  static XCTestExpectation *irisClosingSessionExpectation;
+
+typedef NS_ENUM(NSUInteger ,IrisRtcPstnTestState){
+    
+    //for Pstn Outgoing with Valid Credentials.
+    kTestPstnOutgoing,
+    
+    //for Pstn Incoming with Valid Credentials.
+    kTestPstnIncoming,
+    
+    //for Pstn Outgoing with Invalid Source telephone Number.
+    kTestInvalidSourceTN,
+    
+    //for Pstn Incoming with Invalid Target Telephone Number.
+    kTestInvalidTargetTN,
+    
+    //for Pstn Incoming with Invalid Room Id.
+    kTestInvalidRoomId,
+    
+    //for Pstn Incoming with Invalid Room Token.
+    kTestInvalidRoomToken,
+    
+    //for Pstn Incoming with Invalid Room Expiry Time.
+    kTestInvalidRoomExpiryTime,
+    
+    //for pstn closing session after call is connected.
+    kTestCloseSession,
+    
+    //for Pstn outgoing closing session when sip status changed to kConnecting.
+    kTestCloseSessionAfterSIPConnecting
+    
+}kTestState;
 
 @interface IrisRtcPstnCallTest : XCTestCase <IrisRtcConnectionDelegate,IrisRtcAudioSessionDelegate>
 {
@@ -132,6 +168,7 @@ __weak  static XCTestExpectation *irisDisconnectedExpectation;
 }
 
 - (void)test1_PstnOutgoing {
+    NSLog(@"Test For Pstn Succesfull Outgoing call Flow");
     NSLog(@"Check RTC connection before making a pstn call");
     
     NSError *Error = nil;
@@ -146,6 +183,7 @@ __weak  static XCTestExpectation *irisDisconnectedExpectation;
         }
         else
         {
+            kTestState = kTestPstnOutgoing;
             [self createAudioSession];
             
             // Connection and session Cleanup Excuted Only when the Testcases Completed
@@ -159,9 +197,9 @@ __weak  static XCTestExpectation *irisDisconnectedExpectation;
 }
 
 - (void)test2_PstnIncoming {
+    NSLog(@"Test For Pstn Succesfull Incoming call Flow");
     NSLog(@"Check RTC connection before joining pstn call");
     
-    notificationData = nil;
     NSError *Error = nil;
     
     irisConnectedExpectation = [self expectationWithDescription:@"Connected with IRIS backend"];
@@ -176,12 +214,13 @@ __weak  static XCTestExpectation *irisDisconnectedExpectation;
             irisNotificationReceivedExpectation  = [self expectationWithDescription:@"Incoming call notification received"];
             [self invokeIncomingNotification];
             
-            [self waitForExpectationsWithTimeout:1000 handler:^(NSError *error) {
+            [self waitForExpectationsWithTimeout:100 handler:^(NSError *error) {
                 if (error) {
                     NSLog(@"Incoming call notification Timeout Error: %@", error);
                     NSLog(@"Incoming call notification for join session - Failed");
                 }
                 else{
+                    kTestState = kTestPstnIncoming;
                     [self joinAudioSession:notificationData];
                     notificationData = nil;
                     
@@ -190,11 +229,193 @@ __weak  static XCTestExpectation *irisDisconnectedExpectation;
                         [joinAudioSession close];
                         joinAudioSession = nil;
                     }
-                    [self disconnectFromServer];
                 }
             }];
+            [self disconnectFromServer];
         }
     }];
+}
+- (void)test3_Close {
+    NSLog(@"Test For Succesfull Closing of session");
+    NSLog(@"Check RTC connection before making a pstn call");
+    
+    NSError *Error = nil;
+    
+    irisConnectedExpectation = [self expectationWithDescription:@"Connected with IRIS backend"];
+    [[IrisRtcConnection sharedInstance] connectUsingServer:evmUrl irisToken:IrisToken routingId:routing_id delegate:self error:&Error];
+    
+    [self waitForExpectationsWithTimeout:35 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"Connection Timeout Error: %@", error);
+            NSLog(@"Check RTC connection before making audio call - Failed");
+        }
+        else
+        {
+            kTestState = kTestCloseSession;
+            [self createAudioSession];
+            
+            // Connection and session Cleanup Excuted Only when the Testcases Completed
+            [self disconnectFromServer];
+        }
+    }];
+}
+
+-(void)test4_CloseSessionAfterInitilazation{
+    NSLog(@"Test For Succesfull Closing of session");
+    NSLog(@"Check RTC connection before making a pstn call");
+    
+    NSError *Error = nil;
+    
+    irisConnectedExpectation = [self expectationWithDescription:@"Connected with IRIS backend"];
+    [[IrisRtcConnection sharedInstance] connectUsingServer:evmUrl irisToken:IrisToken routingId:routing_id delegate:self error:&Error];
+    
+    [self waitForExpectationsWithTimeout:35 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"Connection Timeout Error: %@", error);
+            NSLog(@"Check RTC connection before making audio call - Failed");
+        }
+        else
+        {
+            kTestState = kTestCloseSessionAfterSIPConnecting;
+            [self createAudioSession];
+            
+            // Connection and session Cleanup Excuted Only when the Testcases Completed
+            [self disconnectFromServer];
+        }
+    }];
+}
+
+//TestCases with Invalid Credentials
+- (void)test5_InvalidSourceTN{
+    NSLog(@"Test For Pstn Outgoing with Invalid Source TN");
+    NSLog(@"Check RTC connection before making a pstn call");
+    
+    NSError *Error = nil;
+    
+    irisConnectedExpectation = [self expectationWithDescription:@"Connected with IRIS backend"];
+    [[IrisRtcConnection sharedInstance] connectUsingServer:evmUrl irisToken:IrisToken routingId:routing_id delegate:self error:&Error];
+    
+    [self waitForExpectationsWithTimeout:35 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"Connection Timeout Error: %@", error);
+            NSLog(@"Check RTC connection before making audio call - Failed");
+        }
+        else
+        {
+            kTestState = kTestInvalidSourceTN;
+            [self createAudioSession];
+            
+            // Connection and session Cleanup Excuted Only when the Testcases Completed
+            if (createAudioSession != nil) {
+                [createAudioSession close];
+                createAudioSession = nil;
+            }
+            [self disconnectFromServer];
+        }
+    }];
+}
+
+- (void)test6_InvalidRoomId{
+    NSLog(@"Test For Pstn incoming with Invalid Room Id");
+    NSLog(@"Check RTC connection before joining pstn call");
+    
+    NSError *Error = nil;
+    
+    irisConnectedExpectation = [self expectationWithDescription:@"Connected with IRIS backend"];
+    [[IrisRtcConnection sharedInstance] connectUsingServer:evmUrl irisToken:IrisToken routingId:routing_id delegate:self error:&Error];
+    
+    [self waitForExpectationsWithTimeout:100 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"Connection Timeout Error: %@", error);
+            NSLog(@"Check RTC connection before making audio call - Failed");
+        }
+        else{
+            irisNotificationReceivedExpectation  = [self expectationWithDescription:@"Incoming call notification received"];
+            [self invokeIncomingNotification];
+            
+            [self waitForExpectationsWithTimeout:100 handler:^(NSError *error) {
+                if (error) {
+                    NSLog(@"Incoming call notification Timeout Error: %@", error);
+                    NSLog(@"Incoming call notification for join session - Failed");
+                }
+                else{
+                    kTestState = kTestInvalidRoomId;
+                    [self joinAudioSession:notificationData];
+                    
+                    // Connection and session Cleanup Excuted Only when the Testcases Completed
+                    if (joinAudioSession != nil) {
+                        [joinAudioSession close];
+                        joinAudioSession = nil;
+                    }
+                }
+            }];
+            [self disconnectFromServer];
+        }
+    }];
+}
+
+- (void)test7_InvalidRoomToken{
+    NSLog(@"Test For Pstn incoming with Invalid Room Token");
+    NSLog(@"Check RTC connection before joining pstn call");
+    
+    NSError *Error = nil;
+    
+    irisConnectedExpectation = [self expectationWithDescription:@"Connected with IRIS backend"];
+    [[IrisRtcConnection sharedInstance] connectUsingServer:evmUrl irisToken:IrisToken routingId:routing_id delegate:self error:&Error];
+    
+    [self waitForExpectationsWithTimeout:100 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"Connection Timeout Error: %@", error);
+            NSLog(@"Check RTC connection before making audio call - Failed");
+        }
+        else{
+            kTestState = kTestInvalidRoomToken;
+            [self joinAudioSession:notificationData];
+            
+            // Connection and session Cleanup Excuted Only when the Testcases Completed
+            if (joinAudioSession != nil) {
+                [joinAudioSession close];
+                joinAudioSession = nil;
+            }
+            [self disconnectFromServer];
+        }
+    }];
+}
+
+-(void)test8_InvalidRoomExpiry{
+    NSLog(@"Test For Pstn incoming with Invalid RoomExpiryToken");
+    NSLog(@"Check RTC connection before joining pstn call");
+    
+    NSError *Error = nil;
+    
+    irisConnectedExpectation = [self expectationWithDescription:@"Connected with IRIS backend"];
+    [[IrisRtcConnection sharedInstance] connectUsingServer:evmUrl irisToken:IrisToken routingId:routing_id delegate:self error:&Error];
+    
+    [self waitForExpectationsWithTimeout:100 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"Connection Timeout Error: %@", error);
+            NSLog(@"Check RTC connection before making audio call - Failed");
+        }
+        else{
+            if (error) {
+                NSLog(@"Incoming call notification Timeout Error: %@", error);
+                NSLog(@"Incoming call notification for join session - Failed");
+            }
+            else{
+                kTestState = kTestInvalidRoomExpiryTime;
+                [self joinAudioSession:notificationData];
+                notificationData = nil;
+                
+                // Connection and session Cleanup Excuted Only when the Testcases Completed
+                if (joinAudioSession != nil) {
+                    [joinAudioSession close];
+                    joinAudioSession = nil;
+                }
+                [self disconnectFromServer];
+            }
+        }
+    }];
+    
 }
 
 -(void)invokeIncomingNotification
@@ -227,7 +448,6 @@ __weak  static XCTestExpectation *irisDisconnectedExpectation;
 -(void)createAudioSession
 {
     NSLog(@"This test is to check Audio call");
-    irisAudioSessionCreatedExpectation = [self expectationWithDescription:@"Audio session created"];
     
     if(createAudioSession == nil){
         createAudioSession = [[IrisRtcAudioSession alloc]init];
@@ -241,7 +461,19 @@ __weak  static XCTestExpectation *irisDisconnectedExpectation;
         NSString *tempString = [[NSString alloc] initWithData:tempData encoding:NSUTF8StringEncoding];
         
         NSError *error = nil;
-        [createAudioSession createWithTN:toTN _sourceTelephoneNum:caller notificationData:tempString stream:nil sessionConfig:sessionconfig delegate:self error:&error];
+        
+        if (kTestState == kTestPstnOutgoing || kTestState == kTestCloseSession) {
+            irisAudioSessionCreatedExpectation = [self expectationWithDescription:@"Audio session created"];
+            [createAudioSession createWithTN:toTN _sourceTelephoneNum:caller notificationData:tempString stream:nil sessionConfig:sessionconfig delegate:self error:&error];
+        }
+        else if (kTestState == kTestInvalidSourceTN) {
+            irisInvalidSourceTNExpectation = [self expectationWithDescription:@"Invalid Source TN"];
+            [createAudioSession createWithTN:toTN _sourceTelephoneNum:@"765432AA21" notificationData:tempString stream:nil sessionConfig:sessionconfig delegate:self error:&error];
+        }
+        else if (kTestState == kTestCloseSessionAfterSIPConnecting){
+            irisClosingSessionExpectation = [self expectationWithDescription:@"Session is Closed"];
+            [createAudioSession createWithTN:toTN _sourceTelephoneNum:caller notificationData:tempString stream:nil sessionConfig:sessionconfig delegate:self error:&error];
+        }
         
         if (error)
         {
@@ -249,13 +481,24 @@ __weak  static XCTestExpectation *irisDisconnectedExpectation;
             NSLog(@"Check audio call - Failed");
         }
         
-        [self waitForExpectationsWithTimeout:1000 handler:^(NSError *error) {
+        [self waitForExpectationsWithTimeout:100 handler:^(NSError *error) {
             if (error) {
                 NSLog(@"Check audio call timeout Error: %@", error);
                 NSLog(@"Check audio call - Failed");
             }
             else{
-                
+                if (kTestState == kTestCloseSession) {
+                    irisClosingSessionExpectation = [self expectationWithDescription:@"Session is Closed"];
+                    [createAudioSession close];
+                    [self waitForExpectationsWithTimeout:100 handler:^(NSError * _Nullable error) {
+                        if (error) {
+                            NSLog(@"Iris Session Failed To Close");
+                        } else {
+                            NSLog(@"Iris Session Succesfully Closed");
+                            createAudioSession = nil;
+                        }
+                    }];
+                }
             }
         }];
     }
@@ -265,7 +508,7 @@ __weak  static XCTestExpectation *irisDisconnectedExpectation;
 - (void)joinAudioSession:(NSDictionary *)data {
     
     NSLog(@"This test is to check join Audio call");
-    irisAudioSessionJoinExpectation = [self expectationWithDescription:@"Audio session join"];
+
     roomId = data[@"roomid"];
     NSString *roomToken = data[@"roomtoken"];
     NSString *roomtokenexpirytime = data[@"roomtokenexpirytime"];
@@ -277,7 +520,24 @@ __weak  static XCTestExpectation *irisDisconnectedExpectation;
         joinAudioSession.isVideoBridgeEnable=true;
         
         NSError *error = nil;
-        [joinAudioSession joinWithSessionId:roomId roomToken:roomToken roomTokenExpiryTime:[roomtokenexpirytime intValue] stream:nil rtcServer:rtcserver sessionConfig:sessionconfig delegate:self error:&error];
+        
+        if (kTestState == kTestPstnIncoming) {
+            irisAudioSessionJoinExpectation = [self expectationWithDescription:@"Audio session join"];
+            [joinAudioSession joinWithSessionId:roomId roomToken:roomToken roomTokenExpiryTime:[roomtokenexpirytime intValue] stream:nil rtcServer:rtcserver sessionConfig:sessionconfig delegate:self error:&error];
+        }
+        else if (kTestState == kTestInvalidRoomId){
+            irisInvalidRoomIdExpectation = [self expectationWithDescription:@"Invalid Room ID"];
+            [joinAudioSession joinWithSessionId:@"547gfd" roomToken:roomToken roomTokenExpiryTime:[roomtokenexpirytime intValue] stream:nil rtcServer:rtcserver sessionConfig:sessionconfig delegate:self error:&error];
+        }
+        else if (kTestState == kTestInvalidRoomToken){
+            irisInvalidRoomTokenExpectation = [self expectationWithDescription:@"Invalid Room Token"];
+            [joinAudioSession joinWithSessionId:roomId roomToken:@"abcd" roomTokenExpiryTime:[roomtokenexpirytime intValue] stream:nil rtcServer:rtcserver sessionConfig:sessionconfig delegate:self error:&error];
+        }
+        else if (kTestState == kTestInvalidRoomExpiryTime){
+            irisInvalidRoomExpiryExpectation = [self expectationWithDescription:@"Invalid RoomExpiryTime"];
+            [joinAudioSession joinWithSessionId:roomId roomToken:roomToken roomTokenExpiryTime:[@"54781" intValue] stream:nil rtcServer:rtcserver sessionConfig:sessionconfig delegate:self error:&error];
+            
+        }
         
         if (error)
         {
@@ -366,11 +626,12 @@ __weak  static XCTestExpectation *irisDisconnectedExpectation;
 
 - (void)onNotification:(nonnull NSDictionary *)data {
     NSLog(@"IrisRtcConnectionDelegate :: onNotification");
-    
-    if (notificationData == nil) {
-        [irisNotificationReceivedExpectation fulfill];
-        notificationData = data;
-        irisNotificationReceivedExpectation = nil;
+    if ([[data objectForKey:@"type"]  isEqual: @"notify"]){
+        if (notificationData == nil) {
+            [irisNotificationReceivedExpectation fulfill];
+            notificationData = data;
+            irisNotificationReceivedExpectation = nil;
+        }
     }
     
 }
@@ -395,6 +656,14 @@ __weak  static XCTestExpectation *irisDisconnectedExpectation;
 
 - (void)onSessionEnded:(NSString *)roomId traceId:(NSString *)traceId {
     NSLog(@"IrisRtcAudioSessionDelegate :: onSessionEnded");
+    if (kTestState == kTestCloseSession) {
+        [irisClosingSessionExpectation fulfill];
+        irisClosingSessionExpectation = nil;
+    }
+    else if (kTestState == kTestCloseSessionAfterSIPConnecting){
+        [irisClosingSessionExpectation fulfill];
+        irisClosingSessionExpectation = nil;
+    }
 }
 
 - (void)onSessionJoined:(NSString *)roomId traceId:(NSString *)traceId {
@@ -433,6 +702,33 @@ __weak  static XCTestExpectation *irisDisconnectedExpectation;
         if (irisAudioSessionJoinExpectation){
             [irisAudioSessionJoinExpectation fulfill];
             irisAudioSessionJoinExpectation = nil;
+        }
+    }
+    else if (status == kConnecting){
+        if (kTestState == kTestCloseSessionAfterSIPConnecting) {
+            [createAudioSession close];
+        }
+    }
+}
+
+- (void)onSessionError:(NSError *)error withAdditionalInfo:(NSDictionary *)info roomId:(NSString *)roomId traceId:(NSString *)traceId{
+    NSLog(@"IrisRtcAudioSessionDelegate :: onSessionError :%@,%ld",error.localizedDescription,(long)error.code);
+    if (kTestState == kTestInvalidSourceTN) {
+        [irisInvalidSourceTNExpectation fulfill];
+        irisInvalidSourceTNExpectation = nil;
+    }
+    else if (error.code == -802) {
+        if (kTestState == kTestInvalidRoomId) {
+            [irisInvalidRoomIdExpectation fulfill];
+            irisInvalidRoomIdExpectation = nil;
+        }
+        else if (kTestState == kTestInvalidRoomToken){
+            [irisInvalidRoomTokenExpectation fulfill];
+            irisInvalidRoomTokenExpectation = nil;
+        }
+        else if (kTestState == kTestInvalidRoomExpiryTime){
+            [irisInvalidRoomExpiryExpectation fulfill];
+            irisInvalidRoomExpiryExpectation = nil;
         }
     }
 }

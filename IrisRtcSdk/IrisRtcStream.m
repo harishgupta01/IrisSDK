@@ -140,6 +140,10 @@ NSString* const IrisRtcStreamTag= @"IrisRtcStream";
         _isVideoEnable = false;
         _isLocalTrackAdded = false;
         // Get capture device
+        if(type == kStreamTypeAudio){
+            return self;
+        }
+        
         cameraID = nil;
         if(cameraType == kCameraTypeBack)
         {
@@ -279,6 +283,7 @@ NSString* const IrisRtcStreamTag= @"IrisRtcStream";
         NSString *trackId = [NSString stringWithFormat:@"iOSAudioTrack%@",[self getRandomId]];
         IRISLogVerbose(@"localTrack****** streamID = %@ and trackId = %@",streamID,trackId);
         _lms = [pcfactory mediaStreamWithStreamId:streamID];
+        
         localAudioTrack = [pcfactory audioTrackWithTrackId:trackId];
         [_lms addAudioTrack:localAudioTrack];
         
