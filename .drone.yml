@@ -7,7 +7,7 @@ pipeline:
     script: 
     - cd harish
     - rm -rf IrisSDK
-     - export IRISAUMURL=$${IRISAUMURL}
+     - export IRISAUMURL=$IRISAUMURL
       - export IRISIDMURL=$${IRISIDMURL} 
       - export IRISEVMURL=$${IRISEVMURL}
       - export IRISNTMURL=$${IRISNTMURL}
