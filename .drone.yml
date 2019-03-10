@@ -21,7 +21,8 @@ pipeline:
       - export IRISUSERPWD=$${IRISUSERPWD} 
       - export IRISFROMTN=$${IRISFROMTN} 
       - export IRISTOTN=$${IRISTOTN} 
-      - export IRISCALLEEID=$${IRISCALLEEID}   
+      - export IRISCALLEEID=$${IRISCALLEEID}  
+      - echo $IRISAUMURL
     - git clone https://github.com/harishgupta01/IrisSDK
     - cd IrisSDK
     - /usr/local/bin/pod install
