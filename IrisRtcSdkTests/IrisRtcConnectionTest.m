@@ -40,7 +40,7 @@ __weak  static XCTestExpectation *irisInvalidRoutingIdExpectation;
 
 - (void)setUp {
     [super setUp];
-    
+    NSLog(@"HArish::setUp");
     [self readEnvironmentVariables];
     
     NSString *authMgrUrl = [NSMutableString stringWithFormat:@"%@/v1.1/login", aumUrl];
@@ -228,8 +228,9 @@ __weak  static XCTestExpectation *irisInvalidRoutingIdExpectation;
 //}
 
 - (void)readEnvironmentVariables {
-    
+    NSLog(@"readEnvironmentVariables::setUp");
     appkey = [[NSProcessInfo processInfo]environment][@"IRISAPPKEY"];
+    NSLog(@"readEnvironmentVariables::appkey = %@",appkey);
     idmUrl = [[NSProcessInfo processInfo] environment][@"IRISIDMURL"];
     aumUrl = [[NSProcessInfo processInfo] environment][@"IRISAUMURL"];
     evmUrl = [[NSProcessInfo processInfo] environment][@"IRISEVMURL"];
