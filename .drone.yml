@@ -9,7 +9,8 @@ pipeline:
     - rm -rf IrisSDK
     - git clone https://github.com/harishgupta01/IrisSDK
     - cd IrisSDK
-     - export IRISAUMURL=$IRISAUMURL
-     - echo $PATH
-     - echo $IRISAUMURL
-     - ./script_ios_test.sh > sample.txt
+    - export IRISAUMURL=$IRISAUMURL
+    - echo $PATH
+    - echo $IRISAUMURL
+    - xcodebuild
+    - ./script_ios_test.sh > sample.txt
