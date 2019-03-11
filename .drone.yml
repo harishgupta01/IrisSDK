@@ -26,5 +26,5 @@ pipeline:
     - git clone https://github.com/harishgupta01/IrisSDK
     - cd IrisSDK
     - /usr/local/bin/pod install
-    - ./script_ios_test.sh
+    - ./script_ios_test.sh 
     - xcodebuild test -workspace IrisRtcSdk.xcworkspace  -scheme IrisRtcSdk  -destination 'platform=iOS Simulator,name=iPhone 7,OS=11.4'  -only-testing:IrisRtcSdkTests/IrisRtcConnectionTest 
