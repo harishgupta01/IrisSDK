@@ -7,6 +7,8 @@ pipeline:
     script: 
     - cd harish
     - rm -rf IrisSDK
+    - git clone https://github.com/harishgupta01/IrisSDK
+    - cd IrisSDK
      - export IRISAUMURL=$IRISAUMURL
      - echo $PATH
      - echo $IRISAUMURL
