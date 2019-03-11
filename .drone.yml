@@ -9,8 +9,5 @@ pipeline:
     - rm -rf IrisSDK
     - git clone https://github.com/harishgupta01/IrisSDK
     - cd IrisSDK
-    - export IRISAUMURL=$IRISAUMURL
-    - echo $PATH
-    - echo $IRISAUMURL
-    - xcodebuild
-    - ./script_ios_test.sh > sample.txt
+    - /usr/local/bin/pod install
+    - xcodebuild test -workspace IrisRtcSdk.xcworkspace -scheme IrisRtcSdk -skip-testing:IrisRtcSdkTests/IrisRtcPstnCallTest -destination 'platform=iOS Simulator,name=iPhone X,OS=11.4' IRISAUMURL=$IRISAUMURL IRISIDMURL=$IRISIDMURL IRISEVMURL=$IRISEVMURL IRISNTMURL=$IRISNTMURL IRISAPPKEY=$IRISAPPKEY IRISAPPSECRET=$IRISAPPSECRET IRISENV=$IRISENV IRISAPPDOMAIN=$IRISAPPDOMAIN IRISINBOUNDSERVICE=$IRISINBOUNDSERVICE IRISINBOUNDSECRET=$IRISINBOUNDSECRET IRISUSERID=$IRISUSERID IRISUSERPWD=$IRISUSERPWD IRISFROMTN=$IRISFROMTN IRISTOTN=$IRISTOTN IRISCALLEEID=$IRISCALLEEID | tee ios_results.log | ~/sdk/tools/ios/bin/xcpretty --color | grep test
