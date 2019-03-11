@@ -10,3 +10,4 @@ pipeline:
      - export IRISAUMURL=$IRISAUMURL
      - echo $PATH
      - echo $IRISAUMURL
+     - ./script_ios_test.sh
